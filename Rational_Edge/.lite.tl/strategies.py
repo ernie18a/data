@@ -1,0 +1,3 @@
+from strategy_shard_000 import STRATEGIES as SHARD_000_STRATEGIES
+
+STRATEGIES: list[dict] = [*SHARD_000_STRATEGIES]
