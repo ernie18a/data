@@ -1,1 +1,0 @@
-STRATEGIES: list[dict] = []
