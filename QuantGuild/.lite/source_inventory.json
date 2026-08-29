@@ -1,0 +1,2636 @@
+{
+  "schema_version": "1.0",
+  "files": [
+    {
+      "source_ref": "/g/data/QuantGuild/.lite/source_inventory.json",
+      "hash": "03a82a7724695e1ca99802266984635670d294082b6b228b66a9271b262c6ada",
+      "status": "ignored",
+      "reason": "target_dir",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/.lite/strategies.py",
+      "hash": "993ef160520e5269d32ecfd1276444efdf4d92489bd04be3d3ec018a208e2a59",
+      "status": "ignored",
+      "reason": "target_dir",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/.lite/strategy_shard_000.py",
+      "hash": "74ccbb4355dcea6ef8e6f977071438c4402a438cd59b419835e79aff4634fea1",
+      "status": "ignored",
+      "reason": "target_dir",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_3_Backtesting_Pitfalls_That_Ruin_Your_Trading_Strategy_sjq3toGtr0U.txt",
+      "hash": "b6e0b31e8a08537ea15fb23eb61ef0be379f009257ee5f2c3d1659cc546dd4aa",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_5_Projects_that_Made_me_a_Quant_bTMSAEn0XW4.txt",
+      "hash": "944c8f225f8b8f5eeaaeb2471eb9a1303514490032f28d1933edad7e521d9804",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_A_Quant_Derives_the_Karhunen_Loève_Expansion_of_the_Brownian_Bridge_in_Continuous_Time_Nm0XXPhpEx8.txt",
+      "hash": "0b9be64dc82f027435d6113b7b92c4220bb0a049821d95acdc530ec84cf744fb",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_A_Quant_s_Visual_Guide_to_Progress_QBx-KCvNQBQ.txt",
+      "hash": "c392c08475726650ee890ec6967c1937addc970a453bd52fab35ead417f70b2a",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_A_REAL_Quant_Debunks_the_Day_Trading_Scam_xa5eSjASDWo.txt",
+      "hash": "b4f0642a6ed659fc61fd2bd12dd3ebffc9513fa9812d764895016065a40062b2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Algorithmic_Multi_Greek_Hedging_using_Python_CfSq_fMx8fs.txt",
+      "hash": "f2f6f804586a4513638e2578d3406b4bd1e79043e20fe070f33d843c48994f68",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Analyzing_Stock_Returns_with_Principal_Component_Analysis_in_Python_oKJ5Rb3PI-o.txt",
+      "hash": "15e9d95486d8d5cfd2a8c113f82b40e00b727535cb2201183c4f11f9a2b5545d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Analyzing_Trading_Strategy_Performance_Over_Time_boh9JkGPG9U.txt",
+      "hash": "5b1249e54d9d1e46f02fef04ce9b2e2b7450c8e6ccb59dc682efca9f873af330",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Applied_Statistics_and_Statistical_Inference_ndou1b8NGQ0.txt",
+      "hash": "0c2160791e530c5d4854fed82f83fcaaf3b4ad78b372e99d30e80e49c98057f9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Arithmetic_Brownian_Motion_in_Python_QIM12cvCu4c.txt",
+      "hash": "75c0b611ea1689fb4c23236f0acdc08f78a5885dd4c2b9e899ee6154c9c99672",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Bachelier_Model_Call_Option_Price_Derivation_J1sBj9K-BhE.txt",
+      "hash": "835205795fa4a0bc1106ceeb7e133848cbfa8c24a832a28f289c4b3a9c967c72",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Backtesting_Quant_Strats_in_Python_Quantitative_Research_oqVAtacekr0.txt",
+      "hash": "844e9b1bb37f61c3eacb1016363229b39cb52e04cf0b49caf59332efcf29b8e3",
+      "status": "processed",
+      "outputs": [
+        "strategy_shard_000.py",
+        "strategies.py"
+      ],
+      "source_logic_ids": [
+        "quantguild_sma_7_14"
+      ]
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Banks_are_Just_Casinos_Quant_Explains_Why_gG9Xsvgqvp4.txt",
+      "hash": "b792dd63cfbc81cb11ea8714c481f3652829d691804aa19f6c2c3fa3cc09b5ff",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Black_Litterman_vs_Mean_Variance_Portfolio_Optimization_MVO_in_Python_o1mCFVt79Y8.txt",
+      "hash": "7bd2649bad508829db9619b231989a38df2e7ce2e710586f062798dec39c08d2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Black_Scholes_European_Option_Pricing_Itô_s_Lemma_oAqNunJItcc.txt",
+      "hash": "c781bca59165e8b8771e37faefa016b1c8df6aa81b3995f4ca22bb5fffa84851",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Black_Scholes_Implied_Volatility_in_3_Minutes_8CB22YhioRw.txt",
+      "hash": "dec058fc5fd0eca00d15ee323b3c42cea7c72c0592ac182c418905672fb07c97",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Books_that_Made_Me_a_Quant_izuZqWz-Dpg.txt",
+      "hash": "3de5452401b9217d396dbe63c111a079cb93f0db3bc7b706b52ed3bc5304783e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Brownian_Motion_for_Quant_Finance_jiAdz9W4aDI.txt",
+      "hash": "3a9eb025431b210db0912f9aa0d2b55c5627e4c5c434c0ea9b930402562ee9ac",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_a_Contemporaneous_Social_Sentiment_Trading_Strategy_using_Financial_Modeling_Prep_s_API_AWTtDAl3i7E.txt",
+      "hash": "e09216ffaf8da21a269545b3dcd1a3898bad74da1075a5257f1ea3e7810114b6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_a_Profitable_Algorithmic_Trading_System_in_Java_Crypto_Equities_Chapter_1_Connection_75NdmQ8ptqE.txt",
+      "hash": "6ba88bbab976bbcc91e6abaf53344a2781ca1f7257dc4f1b7b51dddd12a743a5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Connection_and_Structure_WcPtPHJatIo.txt",
+      "hash": "882b6505a907f291796daa31d701bb84bf0325c949a3ba39ae81f6219f6ae4b8",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Data_Caching_FJpiY0bsQEI.txt",
+      "hash": "c656ed20a42e716d842322d33caa04f0f12e369a0221a55749038789eb2af2e5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Live_Market_Data_Streams_9m1vGTG9Wqk.txt",
+      "hash": "666b9fd72ffaeb6ef1acac4aa20d9f67b3c47f7a25b7201176c79496fd3261f1",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Web_Application_Development_B-ecgy17VtE.txt",
+      "hash": "5d6953cd09dbf0e127dfa659ee8f833d076d5bff448b40ab0e637e243d4a7076",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_C_C_Pass_by_Value_and_Pass_by_Reference_in_3_Minutes_HDsa_9SeysE.txt",
+      "hash": "52c23f7c0990cf798359015d004603c3181f582ff516287cba0ab05cef80d0b7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_C_C_Pointers_in_3_Minutes_uzrri0lKGcA.txt",
+      "hash": "58aaba8ba4376e16f8fff86ff56ef7ccc007891e0e5715b3c734e2d6fb0360da",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Can_AI_Learn_Black_Scholes_aRr3chiwkrI.txt",
+      "hash": "21753aa00c924e6ca9d5abce0808ff059ada2bc9ae9034ec7455238d269ba4bd",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Central_Limit_Theorem_for_Quant_Finance_q2era-4pnic.txt",
+      "hash": "981f2380bb4fda343d3d0910799dc5886b0a309a753d61eeabc2178c028a6562",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Chapman_Kolmogorov_Equations_with_Applications_to_Discrete_Homogeneous_Markov_Chains_L3FqYBDw9fE.txt",
+      "hash": "fb14fe1bc575f58416aa22429c2d492ee2829a9d1547191651e3ada3cb766245",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Coding_an_AI_Bot_to_Trade_Nvidia_From_Scratch_qKCjatq9CZM.txt",
+      "hash": "33df9c8a5a9d155588e58a3faa7bec1e7587a644404e84b7b3bd69a3ae6d8bf5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Compound_Annual_Growth_Rate_CAGR_for_Quant_Finance_kOzvtRE_uX8.txt",
+      "hash": "4ae8af8816fbfc97e83cf40cf2b62f86a7d18eda0b3d9d146e5fa1dde3602d1d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Control_Variates_for_Variance_Reduction_Iu_gCD74Y70.txt",
+      "hash": "7c574fa74c95455507dc58af9e8e0683baabefd9cff71829504b369b3cb0b8ca",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Correcting_the_Interpretation_of_a_Confidence_Interval_7h8MDB029MQ.txt",
+      "hash": "44efd8fec538bc7aea29ed142851b67a95cdf08b0430040528c41f39635778c9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Correlated_Brownian_Motions_in_Python_4hNgWlUfp4w.txt",
+      "hash": "9763a234603871fe0877cb9cf399f2480fa0f622f05d0988740a5a6846e9efd0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Critical_Values_in_3_Minutes_YyBG3IESj90.txt",
+      "hash": "8886d9cdf8a42c374c80b65dc870d30c087c7118f7ee6c55670be1ac022e7075",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Deep_Learning_Rough_Volatility_Paper_Review_uKcbP6g2f18.txt",
+      "hash": "0ddc8d8a6498bb94a22e164c81e86628eb35829a6f2d9b7c9a38e4dda1657972",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Delta_Hedging_and_Black_Scholes_Prices_jDoLost28tE.txt",
+      "hash": "60d483697aa301e2e3c179d6ff97be6beb6ddc4b76bc0221c573baaa0e30a2b0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Do_Emojis_Predict_Stock_Returns_Quant_Guild_at_UCSD_s_Triton_Quantitative_Trading_915-fyEM9l8.txt",
+      "hash": "3af8463d17939bbd37da18924d0f60737cc34389209de0b4d66dd3403a5038d0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Equity_Trading_and_Tariffs_Yms19aI3eu4.txt",
+      "hash": "2381a4b3d6644a7ad9f9c34ac6ba8382018cb1cf6e0ee3db85da0ef178538b9a",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Executive_Compensation_and_Firm_Performance_yFuZDac9fKo.txt",
+      "hash": "a898aa1069ae0d9bc02c0b1bb0be15e500684f1d5c7af962e7997e25a7ee227e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Expectation_Variance_Independence_Covariance_and_Correlation_2eQLnHiJJ7A.txt",
+      "hash": "26f72605a9334e6d10021fbd8b93f606b5582f78884cae905ff60e5bb3d0bc23",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Expected_Stock_Returns_Don_t_Exist_iXNSBn5xqrA.txt",
+      "hash": "90a6c6729ef9717419f5e75ad014e3e906f0d331818664e84a3a3ac884e28c18",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Finite_Differences_Option_Pricing_for_Quant_Finance_uzbveN8n34U.txt",
+      "hash": "2f3a3fb907e2619d2d386292542cbb324f9f3a459d6ab0c2d5f4b6630dfac808",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Forecasting_my_Subscribers_for_2023_N0eWsviaXMQ.txt",
+      "hash": "647e6b2af11a646e737519ebc36afa84dae50b4a35be2ec6ee773974e9288ab3",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Fundamental_Theorem_of_Calculus_and_Area_of_Bounded_Regions_Kkfu3uZbbwM.txt",
+      "hash": "a6c29af2ab02fbebd357d470dc136186bf65cc2a160738da5b64ea04e267dbfd",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Gambler_s_Ruin_Problem_in_Quant_Trading_YNvhjSr_nz0.txt",
+      "hash": "3aacba154a1ebc65e1a95910bd3a9c4d43a0ef64e7edc3f18f3e103b1b682ddf",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Geometric_Brownian_Motion_in_Python_qup5fqDoKcg.txt",
+      "hash": "a15f6f60ce40f6201193323ce810588c11b7ac4db860d430d4e3882862b44204",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Graduate_Level_Research_at_an_Ivy_League_University_h_t46xlS-N8.txt",
+      "hash": "c4267fc9b8626b30732b9bab0f431ac4135e472f92404928f159c5037555dd25",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Hawkes_Processes_for_Quant_Finance_BotPHbWFRUA.txt",
+      "hash": "fd35d6bcee093bc89581aa4bc9eb46ab38c43171ff64dd3727ef7ea37d5234b6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Heston_Stochastic_Volatility_Model_and_Fast_Fourier_Transforms_2-oAlnZV6hA.txt",
+      "hash": "a680bb04354a571cffea3b5ddaab2f4bc89ad1ae6254d0a5d42758196781457d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Hidden_Markov_Models_for_Quant_Finance_Bru4Mkr601Q.txt",
+      "hash": "aab1ed299ea8b11fd97af06b471e5d50b2d7d93fa1cf3eb4a4872c0c926cd802",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Goldman_Sachs_Prices_Variance_Swaps_24-wC8RI7BA.txt",
+      "hash": "99c08f906346667c9c674f49767bf20a4c9cc07d4e5ef71ca62fb2304f8ed130",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_I_Cracked_the_Quant_Interview_vygK0EXY8ZI.txt",
+      "hash": "f0fdbc765a5fa6783545c44fb5ac650713890e0e560c8d7b8561048c94f72f9c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Machines_Learn_Gradient_Descent_Stochastic_Gradient_Descent_Simulated_Annealing_0SX_GAgMNkA.txt",
+      "hash": "c67c6ed7c94393403f9d069135b5249f9b9e00ee4d54e020ce6e26fb61a087db",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Markovian_Lifting_Solves_the_Rough_Volatility_Problem_Cr7kBSPqD8A.txt",
+      "hash": "f238f417befada29ef1ca7f20c3f9ad53a5649bb2ee3667cbc44672553a5990b",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Physics_Accidentally_Proved_the_Black_Scholes_Model_IIzGqL3ChEs.txt",
+      "hash": "7f67271140780b00c51ce88a9807bc11d895aacea467be0f29747679ed1ec167",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Quants_Engineer_Portfolios_1r39EGSm9fw.txt",
+      "hash": "d29584262953dbbb1921437ed476fdf644b4c036e0c75e9b460191c16b79da34",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_a_Quant_Manages_a_Portfolio_JjbBAyu0DmI.txt",
+      "hash": "7663452d9387702220459ccc1c82e380a892d951ad99dc5ead2a6a03f0abdb56",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_a_Quant_would_Invest_1_000_000_37wRzGdC9w4.txt",
+      "hash": "e2d338a42e18760a24963fb5de33efa2f51bb7aac2316c288c2b13ca90e381e4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_Fast_Neural_Networks_with_GPU_using_PyTorch_xuykp2s3pfg.txt",
+      "hash": "1e135278c17e86186cadcf57e05c5933fd9d779f87895ec5162d41000586966e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_Interactive_Python_Web_Apps_in_Seconds_XiYnZ6Dy4v8.txt",
+      "hash": "b40151e7d9435cbd2ce607982d559cde9ef3a8399cce7988a7d0cb15a6246b41",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Live_Volatility_Surface_in_Python_Interactive_Brokers_5JEeAsQqlro.txt",
+      "hash": "cbabcb556d1c2d681e06e7f4b214da1d720dcd593be5bb38c5552fcac099b809",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Markov_Chain_Regime_Switching_Bot_in_Python_with_Interactive_Brokers_Part_1_GZnCiXMNZcQ.txt",
+      "hash": "8e8008cfba6a37fb8ad0307271c24969c589a50f044c499d0a6ec62249454772",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Markov_Chain_Regime_Switching_Bot_in_Python_with_Interactive_Brokers_Part_2_CkXljL6eI5A.txt",
+      "hash": "1b2f559fb2d62b6f7d46224254f7687f8e7998906743d2af66376947fbfc1251",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Volatility_Trading_Dashboard_in_Python_with_Interactive_Brokers_19-rFVgJVkg.txt",
+      "hash": "f5a1399e5c81b77f40eaf2cde3d89c2b79ebf858df135bbc84513e337f6e9b43",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_an_AI_Trading_Bot_in_Python__87QHZXOOKA.txt",
+      "hash": "3c7acb64fd8ce0c14b690ad9b6f8140a21436d80f046a05ac191cc6683b4cbba",
+      "status": "skipped",
+      "reason": "Initial market buy is external to the rule; only later DCA order management is specified.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_an_Earnings_Event_Trading_Dashboard_in_Python_Interactive_Brokers_API_Xtth2F1xm5Q.txt",
+      "hash": "83eda4b2501c8611dc43b25d545ec037d799f1118d4130cc3f2fa0a34a936565",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_an_Options_Volatility_Trading_Tool_in_Python_with_Interactive_Brokers__hFw36wfmds.txt",
+      "hash": "5c2ecdd17e795e312fefe04670b95d7c0c03ada89a1585da7053625904bcc04b",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Derive_Volatility_Drag_Soea_7rzkR8.txt",
+      "hash": "3dea83a0aef3e7a4b04680391e785fd08a164df5127c09e2af13dbf641fe9bda",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Find_the_Black_Scholes_Merton_Partial_Differential_Equation_2iClLEfXuqA.txt",
+      "hash": "73718b026beac6ec47327310684566fd285457c5c13d3f1ec1a3900a2b9dd737",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Get_Historical_Market_Data_with_Interactive_Brokers_and_Python_7hezNf49iKc.txt",
+      "hash": "3b81572a8ad694e3734ed1975dde1bda7e71584d6ad4285b77ffe1326ca807d1",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Live_According_to_Math_yuMKoXmjtNg.txt",
+      "hash": "4d9bf50c3dd4d1755a88d3a124a9163e601d69e3ca5d523dd5e1f108b3742f00",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Make_Lose_Money_Trading_WP9fb7AMFsI.txt",
+      "hash": "7638ef581e643db0563810c2d457d1fd0eb7842d94586ab1dee491380c8b94a8",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Not_Care_What_People_Think_with_Math_AjxnxG2WsHk.txt",
+      "hash": "6872131c348ed312e0e98d13a690a17893c4ecacfcd74268f95310752b04dc65",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Price_Exotic_Options_hsot26myYYM.txt",
+      "hash": "06b4467784c8a2d3bc5833e065798777d813210b06a8a5193ae17ba783529675",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Price_Options_with_Monte_Carlo_Simulation_2-VRYBKfoyE.txt",
+      "hash": "1990927937273edb3c0133320ee681e0cf5e8e464abb962d74676e82b87c1a7c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Quant_Trade_in_3_Minutes_mZLNzqDZHbA.txt",
+      "hash": "3950d462d81fafe6792675c4170162cd7f4d3e2feb6ab7612f0b662c5a867819",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Read_an_Options_Chain_RrRbz6oXwxE.txt",
+      "hash": "0ba4201b71d72aac27beebf8202bac556cede89df17de6283f2d2dfafe8dee6a",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Simulate_Fractional_Brownian_Motion_fBm_via_Davies_Harte_qQYgbIYz9i0.txt",
+      "hash": "003681a287a4a2123a72b20afd615edef6226925784734020a57ad9573ffe6fa",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Think_About_Stock_Market_Bubbles_and_Drawdowns_A6QWWrhDJTc.txt",
+      "hash": "53dee830531c2655915f8a671066e8cadda77ce44de6b1ebb3d86766990e9d02",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_NqOj__PaMec.txt",
+      "hash": "1dbd9042eedeabfbf489f32b0e49359fb2d28e9af47c0d0d5d052cb832b56c8a",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_Option_Implied_Volatility_kQPCTXxdptQ.txt",
+      "hash": "f68ae9c44a53f13cac202045a762918ca06b69ee3ac9dc6cecba86e5f8f1f0c2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_Options_Implied_Volatility_Crush_jM7Zd6GU86Q.txt",
+      "hash": "360a3e48b359e53f369a45d880107b14acc6eb9906ea23912c2c9de33e52b92e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_Options_with_the_Black_Scholes_Model_1OByexsEJXc.txt",
+      "hash": "ac8b75266532b370753c08e1ac56d1c47e70d936e9c6d900d122f7f7d46308da",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_the_Cash_Secured_Put_mFovTf-TMvw.txt",
+      "hash": "dd5b5edb817296194a5265f3eb19cc82bf5f1438238a29b5bcb543025fc74c20",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_the_Covered_Call_iPsPRQlDeTA.txt",
+      "hash": "21bcfd29159d8385a04b65107c8c1931acfb79842f415ad1741a2f79a0f6cbd1",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_with_an_Edge_NlqpDB2BhxE.txt",
+      "hash": "08c104cb68693e316760a1a35d1f6d09ffaa291f01ddd9fb2dedaaf8bc870c3f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_with_the_Black_Scholes_Model_0x-Pc-Z3wu4.txt",
+      "hash": "52cb624527d1bd60da8c9db5e2bb75339b27ee8517921c5a1301d2fedf9b5e6f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_with_the_Kelly_Criterion_7tvW3NvRnPk.txt",
+      "hash": "336532690ad8ed15f00919df0e4747032911dcd3b9e1d3c0d360e525728c9549",
+      "status": "processed",
+      "outputs": [],
+      "candidate_decision": "risk_only"
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Bet_You_ve_Never_Found_Alpha_and_I_Can_Prove_It_UzTJHs3-eT0.txt",
+      "hash": "54b74e220b65da22999825d739f1cae74b2d8364b01bcc66a3b46c579560edb6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Built_a_Social_Network_for_Quantitative_Traders_RO0OUfMqkfk.txt",
+      "hash": "15eb57446186fd6105a7910d3f7dca5680884ddc7ae8996047b2e76338c08552",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Made_an_Open_Source_Market_Making_Game_to_Practice_Trading_A9o2El2FN_M.txt",
+      "hash": "e8f8b6b59faaad0b8bbacc80245a46c6d1a88a807984a46fc0146a4cd8ef5172",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Made_the_Quant_Roadmap_kLJEXE5_7rI.txt",
+      "hash": "6e14b753aa9bf8e9aec4f3ad1bb89947166c82cf15cdad9ae2373fdc1b685d5d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Met_a_Jane_Street_Quant_at_the_Gym_He_Got_This_Wrong_E73rL7Hex-k.txt",
+      "hash": "dea6919040106e60b88b5dfe921af7628070fbeae64ec5dd82615710a9585ad9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Ranked_the_Best_College_Majors_for_Becoming_a_Quant_DL_mG-RUFlQ.txt",
+      "hash": "7b08f0009eab85224de4f626a4e13622d32043b645dc74c676d9ecc453a174d2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_want_the_market_to_crash_aoT3Zln2cak.txt",
+      "hash": "94c79423f02741d928a597d59f13f3003462a5b2f3a7df60610525b38d002ab9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Information_and_Stock_Price_Prediction_df9arrckvL8.txt",
+      "hash": "71a0e86144aaf3744302d44a2677308e90ca12f914e38b782b0ef5e42e4404da",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Introduction_to_Python_0rnZ3yEu2y0.txt",
+      "hash": "9a547a1757fa717f05ae46a14fe73435591a5e04a4138b258bf5592cdcad028e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Introduction_to_Python_Chapter_IV_Multithreading_pstj_4rV6yQ.txt",
+      "hash": "2b516340ca4f666fa5483da6cf07c1d2cb1ca742cd207d536b70878f3a97629e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Intuition_for_Law_of_Large_Numbers_and_Central_Limit_Theorem_tb5gaJzVrlk.txt",
+      "hash": "e283ba9fbef23c0e67090f8214e60f2d98bd1a3a0984865c9a838f0be544669c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Intuitive_Introduction_to_Brownian_Motion_6yDsKwD9pzw.txt",
+      "hash": "11cb8987c1595d77dfa17ff680d044941c75b177d5c4f36dfa04fb469140b509",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Inverse_Transform_Method_for_Generating_Random_Variables_1WB8PtKnaqU.txt",
+      "hash": "3906c5ca15122aeaa5ac9c92cf25c67c37951007a5143aa4d8691b3941cd6e49",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Is_Quant_Trading_Gambling_Roulette_Poker_and_Trading_fI3UHYD389g.txt",
+      "hash": "4f60c78798fbdaf95bc7311a4b42b047c5eb9f0e81e1a29282b516352e2be378",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Is_Trading_Gambling_Quant_Proves_It_s_Not_With_Math_Logic_GvX8Ragl3ZU.txt",
+      "hash": "2b2b6d532d558ab7195119291c88cd939b7745989bf271d9307aebabbf51b322",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Is_Trading_Luck_or_Skill_Quant_Debunks_Trading_Gurus_with_Math_czEyUZabE2U.txt",
+      "hash": "14d92be1964eff35ab4343e5141cbad2ed8cb6b4fd466f77236cf1e73d890f71",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Ito_Integration_Clearly_and_Visually_Explained_dUvZ8m3QpeI.txt",
+      "hash": "0a47454ff05fec0b437d62f27f11d52871e14c563044946d6839f9a84407caf8",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Ito_s_Lemma_Clearly_and_Visually_Explained_TgBzqdN24fo.txt",
+      "hash": "f170d6ee84be228b2ced8123875d3ccd3fa5ef7c2e0018a943bc16f03906e118",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Kalman_Filters_for_Quant_Finance_zVJY_oaVh-0.txt",
+      "hash": "f2ec9fedd13a499cca056d5cf1e29bf0f32199c9d6f01de673b60e100a69f9e5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Life_s_Downside_Variance_Math_vs_Drugs_Edge_Judgement_Ok08aBwfeDY.txt",
+      "hash": "910267154529ff77fd0bf836bf5ad9b60f84dffaf1b2aa83c8ce85469558a9d9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Linear_Algebra_Linear_Independence_Math_Mondays_hJmX1V5JlRs.txt",
+      "hash": "f16ed5e718d70845b388a96485228459028403455aed09f89503141d0d535bd6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Linear_Regression_Clearly_Explained_with_Matrices_y7tYH6Io0Y4.txt",
+      "hash": "b68bfac0d8d4531e61c775f6d09f4fcd664907feb2f2a1b52ded1c39ebd54df4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Linear_Regressions_in_Python_xh7HgsReYGk.txt",
+      "hash": "000d8f220316c4394c7b05dcda6ab356ec48274fc823e2707bb89be3eae28f11",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Managing_Option_Portfolios_with_Black_Scholes_Greeks_Augr2c-PMc4.txt",
+      "hash": "01eab8bb20f01dc3a53bebf4634f8b6f32c4bad19738fbc00e395f292897c4b1",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Markov_Chains_for_Quant_Finance_k8oQfd6M5sA.txt",
+      "hash": "bee4cd6a2eb34e4cd23e7bd0c185218b8eac810d4749229a7320184cf6783702",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Markovian_Modeling_using_First_Step_Analysis_oo4Ish9TW7U.txt",
+      "hash": "61fbe6a406b3deb39b1b77dd5dc84bb9f7ec6e316a6034611051450d8b046be9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Martingale_Volatility_Trading_Q1lxVrLHrYE.txt",
+      "hash": "ab544db00373833d5e4123d43218c5db608f2de5ec815539f32bd77bf88d9d00",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Master_Volatility_with_ARCH_GARCH_Models_iImtlBRcczA.txt",
+      "hash": "183078ffcd54a36d3487f531ab5e43f2518088e1909234aae746a5a0048d7910",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Mastering_Markov_Chains_for_Quant_Interviews_b6yrn6FqTvs.txt",
+      "hash": "f85ae15f5e8a7e3d1491c8440e49c937f6cee4b8ab6d1d155ae2383fff62daee",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Math_Proves_the_Journey_Matters_More_than_the_Destination_hYNxlEKy5Hg.txt",
+      "hash": "729e5fb3a6feb384b486d20972354c329be194f86d2c550f22bf6bd203bc27e4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Modeling_with_the_Law_of_Total_Expectation_-CPUbalMh14.txt",
+      "hash": "7b359b177fa9c060626e2a28cbe72ca3cbde460f48851cbf0bc13e16aa6b47ad",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Moment_Generating_Functions_and_Normal_Random_Variables_ZE3Fi4ZH7f8.txt",
+      "hash": "29f8e0dabf9632d450093da41965249a4dde6da317932ca8e4cfdb1a653de84d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Integration_in_Python_EnsWVUjpqDE.txt",
+      "hash": "0ab7215fde862e7d2f2674bc13d36e114a859029f0471661782397d80c7390d7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Pricing_Financial_Derivatives_in_Python_5OAj0vdyGNY.txt",
+      "hash": "4da2409363e5631ac3e97024680409245283975f4d7abfa3776cd0284c5788e2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Simulation_and_Black_Scholes_for_Pricing_Options_-1RYvajksjQ.txt",
+      "hash": "7b6ee0a139233d476f9bc32cc8eaf0a6b6305b09135d052ca55ddb0c2bce54f0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Simulations_in_Python_MpiJZ2hl8VQ.txt",
+      "hash": "7ba208aa49e36ab640f360b67c31a07220c6cc43bfa183f750e3f9e58fa8c246",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_My_Approach_to_Solving_Quant_Interview_Questions_Optiver_Example_pyD-zXuP8Qo.txt",
+      "hash": "34173705c62d344a1cb8d6eb7b7e450c20303ce6419a456862ed13bd33009b08",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_My_Life_as_a_Quant_n1Z90Iwc_co.txt",
+      "hash": "12e0db9e570744a8f07382e5728c6a6115fc0a967a5adf02cd577411d5974640",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Natural_Language_Processing_NLP_for_Quant_Trading_6llKh4kQBYs.txt",
+      "hash": "b166a384a5bfe26c6ba80bdfba9bf58be5e5081878458669d832f025fd432ccd",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Neural_Networks_for_Quant_Finance_n5acv8R-lN8.txt",
+      "hash": "b08fd952b7870d64f895b1b66a9500576cd075d3bbab267aef1b7fdf1f5701b3",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_No_You_don_t_need_to_backtest_a_trading_strategy_KD_fh_jA_iQ.txt",
+      "hash": "ac6c6ea5be58c255f22737a2a12891fffc637a0a8421d9ecc76f70088b41f52b",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Non_Stationarity_and_Why_Market_Timing_Fails_7nvjrgqKjJE.txt",
+      "hash": "6f3bcb9e6623209adf8bfe935dfd265dfe805092463852f37cbe530f421a7b5c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Non_Target_to_Quant_How_to_Get_a_Quant_Job_in_3_Steps_qBSrjoTdQpA.txt",
+      "hash": "ff176c61306574e6f04ecbae56497f2d1b3107ed7184032397f6328b26772ab3",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Normally_Distributed_Returns_and_Value_of_an_Annuity_Due_muHL4mQhMZE.txt",
+      "hash": "a58ba1920e3c7e7b21da476d2c03bf56c695e5ea77029378a8665d42c567354a",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_People_Publish_Trading_Strategies_Tetlock_2007_Paper_Review_-B3WduveTV0.txt",
+      "hash": "6675ae29c40574c3c05aa435a0f7dca87db308e51260ed9bdf202dc99ee3494f",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Poisson_Processes_for_Quant_Finance_oug0vzbwISQ.txt",
+      "hash": "3de161588b10e18d40f5b3039440f1b605fec05e21a357de0cb9888af6e37d49",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Profitable_vs_Tradable_Why_Most_Strategies_Fail_Live_fzz22JNg9HE.txt",
+      "hash": "75de2312f87f3a725d0ecc1ca3b13cc8401cfcd69af9dbb950cc50e92e55bee1",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Python_Bachelier_Model_Simulation_in_3_Minutes_5BKmO7zNDkM.txt",
+      "hash": "34af8bc95f9ee9e51494f382bc005978dd8e0e07d08ad284e72dc86d97fbc638",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Python_Multithreading_in_3_Minutes_NGLeprazvkM.txt",
+      "hash": "acba2ad0c05dd3cf8980ec23d65e4b9dd5289c350bdbaa9201a78eb05040d755",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Busts_3_Trading_Myths_with_Math_wJfIk3VnubE.txt",
+      "hash": "8ad0fd5bc901431c2c7c7c3f7c11fd5d363c8d4f2e69edd886879f028eace319",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Derives_Volterra_Process_Discretization_and_Simulation_in_Python_ifwhZDCjAgo.txt",
+      "hash": "35856d5cf33af826288fbc0b394916277a8337608cd88a9475c84c27544234ab",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Explains_Algorithmic_Market_Making_aVzFKwyzwM0.txt",
+      "hash": "e9870d35ab09c3b733606a513806fc0f312907435eaac308be09972d62fee15e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Explains_Backtesting_with_Poker_xJJ1nWj9Rto.txt",
+      "hash": "f359b6a2d22056662b05ba3306c3534ca6a9f9ffa47c9f38337104b076dfa2cb",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Explains_Risk_Neutral_Option_Pricing_wYpg0TGxvgM.txt",
+      "hash": "59f4d240c8a455e0b5321347b47d354455ed5543e789a73cea2ee8495188ed49",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Finance_in_3_Minutes_2-gEfXQZFr0.txt",
+      "hash": "176d75756071be71a4a746c289a07dcd0ebb63fafa023d3c45232c6ea98019d4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Guild_s_Macroeconomic_Outlook_03_03_2024_cRN0rwWSXEw.txt",
+      "hash": "6b9e4fd65a6ba2957cd2d4a42c62d883f7ac3eb2751a792e66de0d2486f3d1e7",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Interview_Questions_Consecutive_Coin_Flip_Payouts_lGJ6z_jHFwM.txt",
+      "hash": "ef91b15188ab7429f20164249de2d735825a30a6da55d452bc18b56e59e74881",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Interview_Questions_Probabilities_of_Minimum_and_Maximum_Functions_dGzsOXNRbQY.txt",
+      "hash": "e0e56ff96ee0fadaa0973c28a5f826bec9eeb65bb5a0477b8ec5bcc0005d6be7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Investing_for_Beginners_aBfkf_0YsCY.txt",
+      "hash": "96170a4f287d42c20fad2231661267abe8e6d2e2f55bdc8baf5912cf39ddd446",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Paper_Review_P_buy_side_versus_Q_sell_side_Quants_i8-L9Aqm20c.txt",
+      "hash": "cdc4617312b78c46f7f01db69bbf89a727cb0f19dc39fe8011e11a4af8c2dfc1",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Portfolio_Management_and_Volatility_Drag_YDjOBWb5iG8.txt",
+      "hash": "ab4722a8fc9ab17b92aa5743158375be98f00c553b65561d1bf599f3a9a53f1f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Proves_Trading_Can_t_Be_Taught_But_You_CAN_Learn_This_uivlsPk0WLQ.txt",
+      "hash": "1789680eebf8449a494439b1edd878d471926b78ad859bf1ededb2aefc91a465",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Ranks_Retail_Trading_Mistakes_that_Blow_Up_Your_Account_1mpNxBaBeOw.txt",
+      "hash": "ff5e92f8f21b039b526d70a0edf42b444b9e12adcac1c506ce9dea123cba3745",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Responds_to_and_Corrects_YouTube_Comments_CFqo-BMtKgY.txt",
+      "hash": "3cddfaf1e0348e9c1b473c348b3347f1e8d188c6c52702d0fcd091bc7e1c9af7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Trader_on_Retail_vs_Institutional_Trading_j1XAcdEHzbU.txt",
+      "hash": "9b953500cb3ffe1871336daa2cdcfb14a8e4d88665deec5305a3fd586fc9fe02",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_on_Trading_and_Investing_CKXp_sMwPuY.txt",
+      "hash": "1fe5b231093495746a7019751eddfa28039167949aef0a23403a2de56c34c709",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_vs_Discretionary_Trading_3gblERSSHXI.txt",
+      "hash": "2fbba9648718f98d8fed7fae25a9bfecc216d3b35be115f7770a2695984c6384",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_Episode_001_Time_Value_of_Money_AGjDaoFMZsw.txt",
+      "hash": "48e7fe620cc28744ab90f398fae21681ec68b2139ed529827e8a357bc44f8967",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_Episode_002_Equity_Options_I_hgerQvti_SU.txt",
+      "hash": "35a618cec714a7bf93b9297ba525a1261a8e3316a0df2c55048b1aa709b38bea",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_Episode_003_Equity_Options_II_ytMfmVDKJ7s.txt",
+      "hash": "10ff731d8e153dc23dd25e7b7cee82cc0b4fd9d5bf9abc7812e2a3f90b29818e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_in_Python_Q_Fin_Python_Library_g9HIk8EQCzw.txt",
+      "hash": "906e74399d2c2eb771fa1df108e4d2976488418937de6cafd071b83a81add957",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Risk_is_Always_Mispriced_Pretty_Girls_Public_Speaking_Quitting_Your_Job_MlUSlKD8JTg.txt",
+      "hash": "e97ff1edb0ae9d666c1ddd5e865cb3ec35cb1a9cc0690cc8924a328b0bef4cec",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Simulating_Brownian_Motion_in_Python_1XeA-fkjppY.txt",
+      "hash": "d47123a611ac248a1126f2f83e011317928b110318b28a2dd026083a8b0ba994",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Solving_Geometric_Brownian_Motion_y0s2GXREymI.txt",
+      "hash": "209c0d680b95652a8e97e3ad5d2b3d21faaa8bf3966f8d93872066cea61a03ec",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stochastic_Differential_Equations_for_Quant_Finance_qDAeSC40ZJE.txt",
+      "hash": "6c805db5e0ac699bd192fd7ef4775f5bd0a9c7bf63368d64fa2032e59aeb2638",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_StockTwits_Social_Sentiment_and_Analyst_Recommendations_to_Optimize_Trading_Strategies_q9lTerSyptI.txt",
+      "hash": "13fe895d9a1de0b849a6edc2e813eef3427432f95cf859b17f710d1e39503a06",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stock_Picking_is_Worse_than_Gambling_at_a_Casino_I_Can_Prove_It_E2PuxT_SucA.txt",
+      "hash": "5c184ba3e8c1104b069acaa9b5d8ba07bbfa7d7f5258c39b30381a781082e9dc",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stock_Price_Process_Intuition_for_Equity_Derivatives__c_P5TqiiTE.txt",
+      "hash": "7f7744ca95f11ca71989db660c5d945c2b109c8f79ff7f34474671c94fc05cc7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stop_Using_the_Sharpe_Ratio_Until_You_Watch_This_NJ5PNfIQHrE.txt",
+      "hash": "261e127fcde7f1bca3b7b6a7f798d6d69475e8f87f4afb7b374b8ad2ca29e991",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_5_Papers_that_Built_Modern_Quant_Finance_ZwS1gMGegrM.txt",
+      "hash": "2abcdb1298233ceb56fb33bc252369e4882f8d6a2c59c76338286584399b0157",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Gaussian_Cookbook_for_Aspiring_Quants_GyrcydIWJpo.txt",
+      "hash": "aee91dad5ad3a0a4a719b814b83e06bb7bca4ebfab9e186be107d3b6d094b3d7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Math_of_Burn_the_Boats_Why_Hedging_Ruins_Everything_20PEEtXrqUI.txt",
+      "hash": "12f11c68136e31ed45308600cd3a9f97fc1566caaebf6450e25d089202f80557",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Mathematical_Delusion_of_Retail_Trading_RBfc8SkRwwU.txt",
+      "hash": "d7b276703d310407ce4974a2efe0d94928e026643327fa8e668cfa04eabda002",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Mathematical_Trap_of_Just_Buy_SPY_sgbEkAYAdwk.txt",
+      "hash": "352cb70f34915b18017f35a7ced64bb473d263f1e0895d448822a2835cae93ef",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Method_of_Maximum_Likelihood_Estimation_fbqNL9ae6yU.txt",
+      "hash": "a868681f75408704833a00ec6c927ffc65fa5484cae1f4cf30eb0be56f41add0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Normal_Distribution_in_Python_YRCOHV27H6U.txt",
+      "hash": "48d1c6932849f70937b90d17e8856f11687372fb3ca8d0d013c048cb8efa4305",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Normal_Distribution_mBXgdjlqSjc.txt",
+      "hash": "d23e8f1e171994a562eeb8c3d75886f39ae453892479f553f6fab1136874e399",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_reason_you_want_a_Ferrari_is_why_you_don_t_have_one_bX-mT1pZFho.txt",
+      "hash": "6df0f5dff5be8cb8f29801610f5ec94c08b02db2caecc4f46542816dfbdc5c32",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Time_Series_Analysis_Why_are_Unit_Roots_Important_lCwg599tCm4.txt",
+      "hash": "18ab572e85d2e2450393411f148b2a021ba5656d96ba466b74d33f1c3f1656ed",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Time_Series_Analysis_for_Quant_Finance_JwqjuUnR8OY.txt",
+      "hash": "342fb9b3a7fb209b1aca742dbc827ebc2b2a411b95f9530c22c6795254e5ba4c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Time_Value_of_Money_and_Computing_Compound_Interest_XFWxQJvwAus.txt",
+      "hash": "59ffbb91e82c7630dc393b77782cef5b0bf15382e21ced123aed11bc50a789a3",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Top_5_Python_Tricks_in_5_Minutes_AtJ2DLo8dKY.txt",
+      "hash": "7f61c55fce2703fc8ee97b0e15c31250324b02d1849f14dcc5c14fbb0e892245",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trader_Skill_or_Market_Luck_Quant_Explains_Alpha_in_3_Minutes_Ivz58kZLD2U.txt",
+      "hash": "4557c3cb2955a8fd242dd49466d58f677d24baef4cb44b4fcf50d503086f26d8",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trading_Mean_Reversion_with_Kalman_Filters_BuPil7nXvMU.txt",
+      "hash": "385d79482b2d53e36d335f9d93c5f3c715fda36f21fa8dfdb9201174872c6e73",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trading_with_Violated_Model_Assumptions_2ezWtM8J_os.txt",
+      "hash": "23cfb79473bcf0339d2d27e7fbf08eaccce05e50a40e04600907897423b94da8",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trading_with_the_Black_Scholes_Implied_Volatility_Surface_YH0tWpBaKGs.txt",
+      "hash": "cc7cd0009764ac35f460d9843443b491bcf13c1a3c9e894a3bfabed13bcc99e4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Ultimate_Options_Trading_Crash_Course_-lQdlJh8cCE.txt",
+      "hash": "fb2f2a2fd8f0e25e53eed93f9fa4b10a6fe1a0d6dc8ede0d43337652cb4dddb9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Understanding_and_Calculating_Option_Greeks_in_Python__ta4Hhox1Vc.txt",
+      "hash": "44371ed19281c6609eacfd97376c0a740060541301fea8e71e8a366ac5139866",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Uniform_Probability_and_Binomial_Random_Variables_7C72-fuccio.txt",
+      "hash": "015cd5ee7e232f1b9473fca665b75497228f4bfd90113eca7a1dab484005c8e7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Vibe_Coding_an_Options_Trading_System_FdqvAuHOQeE.txt",
+      "hash": "a5bff888f9c4dec3a2301ddbf885f06c54a6feaf1a5efae5622f396d938ce4df",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Volatility_Risk_Premium_Explained_Implied_vs_Realized_Volatility_kmAE9ZhQ0jU.txt",
+      "hash": "688621aab5ecbf5740f379b84f9f5a2beaa945ca4a2503bc8ea09c0594e11546",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Volatility_Trading_101_with_Python_aozWosFLAEY.txt",
+      "hash": "4d27c69f92e4533a6de9fd7b0bbaf58f02adac0de34810780f75f5ed3f20f296",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Watch_a_Quant_Try_To_Do_2_Digit_Mental_Multiplication_l2fX3jMC4h0.txt",
+      "hash": "174e4e9b3c24e805602d9b2a9e8e2a117ae635b3fc01a35d8ff050d507ab45d6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Web_Application_Development_in_Python_Ajax_and_JavaScript_v2TSTKlrPwo.txt",
+      "hash": "6ddc18f0215daf8ee91c1c422b42292859c180f4440de62b7d0d589003a1b4b0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Web_Application_Development_in_Python_Intro_to_Flask_and_Jinja2_RF1it3i9qzE.txt",
+      "hash": "b951d35eacad70f5f60bb364439e14ef3901783880cc6ef03bf5332de1d9010c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Welcome_to_Quant_Guild_hkDmPbU3DsQ.txt",
+      "hash": "f28516babb003d660648c06c435b323d5b9d78c006d47443bd6912757176cca6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_Does_AI_Actually_Learn_tX7b2KT63WQ.txt",
+      "hash": "f4a4b3f1a747caeba95da295111300e108842b8e6d854c3f9c505249fda60a53",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_Happens_when_the_Expectation_is_Infinity_GF2lJ-G2BYc.txt",
+      "hash": "c0e830ad8f1983a76b9df089faa92016cdaf006835fe8515aebb36c64b8d34da",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_are_European_Options_HgjeDJVCHSo.txt",
+      "hash": "18f688ece4231721592077f7223c86b02f0981373875ff5c2fdc46593044c7f4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_is_Market_Implied_Volatility_VzieTIsBaHM.txt",
+      "hash": "988fb699280cc2596ee9cb54109284814190004047202aba084f7f1d4817c2e8",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_the_F_ck_is_Alpha_And_How_to_Actually_Find_It_21SONVlvkDQ.txt",
+      "hash": "197cf404cbb1cea2165c2f1e7a306bc1357e102ba8aeba5f40148f96bc1f6f94",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_When_Does_a_Trading_Strategy_Actually_Need_to_be_Secret_WsEwKlr_1lA.txt",
+      "hash": "363ccfdb54e9523d34a926616b5b79119ccc30e4cb253202d03d189bea0518dd",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_I_Quit_Being_a_Quant_Researcher_QNYstoX0u1k.txt",
+      "hash": "6b960c2a18e87cb66f1af3b080debf254ba99adc2c428dd73477ed25d7f4ef8e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Monte_Carlo_Simulation_Works_-4sf43SLL3A.txt",
+      "hash": "309a67b295feacca8986cc8b8544317cfb6b412e2995c014d768caa9db052e32",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Most_Traders_Lose_Ergodicity_for_Quant_Trading_dryV1qJYUw8.txt",
+      "hash": "bd6141e21174bd4db2948ea2c03eb3530c96e907a0d987f62c419bd82e9277a0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Poker_Pros_Make_the_Best_Traders_It_s_NOT_Luck_JuD3KGQhofw.txt",
+      "hash": "6391b66b39fc97dc558b21f82e78764552084805d7f8d59c0abcb38b8de97e30",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Portfolio_Optimization_Doesn_t_Work_eZIITtd3UfY.txt",
+      "hash": "1736a024d1505a6d0320c30744e0e9db0a6c9bd7fb0d600b02fc2094dc060cc9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Quant_Models_Break_Wall_Street_s_Dirty_Secret_brdG1TmsPlw.txt",
+      "hash": "8e4beb72daf1bffe4cfbfdac4d531cb954a511bbc719e1c9ab7f79deae5326f0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Quant_Traders_Care_About_Pricing_s0lVvYMA5OA.txt",
+      "hash": "3755a8099115596e791905b9a4c2fe2bd8d9b56bbb7bad73a4a852fe80a2722f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Trading_Metrics_are_Misleading_Unless_This_is_True_K-aUu_M02-Y.txt",
+      "hash": "753c93bfbb279c13a816d2a8a13a23a1a9f1c3fa6b456cc6aa83c3069ec44ccd",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_You_Shouldn_t_Be_a_Quant_Unfiltered_Io49x7t0sZI.txt",
+      "hash": "014f1199989a07ff58042fdd3191db2a6c74d31dc7635cd48c8235973ed78e8e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Your_Backtests_are_Wrong_Markov_Property_for_Quant_Trading_w-EbZ6Xct_E.txt",
+      "hash": "bf573d1be44af7499b93b6647e977f95b63ecaa86d09beb21b84e01d99e720cc",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_is_Portfolio_Rebalancing_Important_ztyh4L6rSR8.txt",
+      "hash": "671d09e623d059d5db0109bf4d346720c9c57252f1ae8797097868b673768bfe",
+      "status": "processed",
+      "outputs": [],
+      "candidate_decision": "risk_only"
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_is_the_Definition_of_a_Derivative_Useful_CD8XYP4lq4g.txt",
+      "hash": "233e75333c2f91d8bbdf53b5fb42f0e50adc501b3624bec0c6278ede84736910",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_your_Trading_Strategy_Sucks_8kBpVelo9Tg.txt",
+      "hash": "b5a490cbf25e996249832cc5ed2d13ba1f2278dace701cfb0c2d111ea016d574",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Will_AI_Replace_Quants_jzQSgTGWCIw.txt",
+      "hash": "d4b224d13dfe3600b392ee4a95ff65058773a1f4df23dace4198b5b7738e553c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_Workshop_Wednesday_Check_In_jjoLCmXkv9E.txt",
+      "hash": "f138215ae388d710042714f10088263516cf8f956f949545a872b48ab186da44",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/QuantGuild/large_v3_turbo_You_Don_t_Find_a_Passion_You_Build_One_92dW2ZDTsJg.txt",
+      "hash": "5f85e7756a64921e2809cc70a6f6b555a87b3cec143f9367ef4e9e24aaf72ab1",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    }
+  ],
+  "candidate_decisions": {
+    "risk_only": [
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_with_the_Kelly_Criterion_7tvW3NvRnPk.txt",
+        "category": "risk_only",
+        "reason": "Kelly position sizing has no Frame-computable market-direction entry."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_is_Portfolio_Rebalancing_Important_ztyh4L6rSR8.txt",
+        "category": "risk_only",
+        "reason": "Portfolio rebalancing needs multi-asset weights and timestamps, not a single-asset direction entry."
+      }
+    ],
+    "skipped": [
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_3_Backtesting_Pitfalls_That_Ruin_Your_Trading_Strategy_sjq3toGtr0U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_5_Projects_that_Made_me_a_Quant_bTMSAEn0XW4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_A_Quant_Derives_the_Karhunen_Loève_Expansion_of_the_Brownian_Bridge_in_Continuous_Time_Nm0XXPhpEx8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_A_Quant_s_Visual_Guide_to_Progress_QBx-KCvNQBQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_A_REAL_Quant_Debunks_the_Day_Trading_Scam_xa5eSjASDWo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Algorithmic_Multi_Greek_Hedging_using_Python_CfSq_fMx8fs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Analyzing_Stock_Returns_with_Principal_Component_Analysis_in_Python_oKJ5Rb3PI-o.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Analyzing_Trading_Strategy_Performance_Over_Time_boh9JkGPG9U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Applied_Statistics_and_Statistical_Inference_ndou1b8NGQ0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Arithmetic_Brownian_Motion_in_Python_QIM12cvCu4c.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Bachelier_Model_Call_Option_Price_Derivation_J1sBj9K-BhE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Banks_are_Just_Casinos_Quant_Explains_Why_gG9Xsvgqvp4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Black_Litterman_vs_Mean_Variance_Portfolio_Optimization_MVO_in_Python_o1mCFVt79Y8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Black_Scholes_European_Option_Pricing_Itô_s_Lemma_oAqNunJItcc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Black_Scholes_Implied_Volatility_in_3_Minutes_8CB22YhioRw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Books_that_Made_Me_a_Quant_izuZqWz-Dpg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Brownian_Motion_for_Quant_Finance_jiAdz9W4aDI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_a_Contemporaneous_Social_Sentiment_Trading_Strategy_using_Financial_Modeling_Prep_s_API_AWTtDAl3i7E.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_a_Profitable_Algorithmic_Trading_System_in_Java_Crypto_Equities_Chapter_1_Connection_75NdmQ8ptqE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Connection_and_Structure_WcPtPHJatIo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Data_Caching_FJpiY0bsQEI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Live_Market_Data_Streams_9m1vGTG9Wqk.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Building_an_Algorithmic_Trading_System_in_Python_Web_Application_Development_B-ecgy17VtE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_C_C_Pass_by_Value_and_Pass_by_Reference_in_3_Minutes_HDsa_9SeysE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_C_C_Pointers_in_3_Minutes_uzrri0lKGcA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Can_AI_Learn_Black_Scholes_aRr3chiwkrI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Central_Limit_Theorem_for_Quant_Finance_q2era-4pnic.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Chapman_Kolmogorov_Equations_with_Applications_to_Discrete_Homogeneous_Markov_Chains_L3FqYBDw9fE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Coding_an_AI_Bot_to_Trade_Nvidia_From_Scratch_qKCjatq9CZM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Compound_Annual_Growth_Rate_CAGR_for_Quant_Finance_kOzvtRE_uX8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Control_Variates_for_Variance_Reduction_Iu_gCD74Y70.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Correcting_the_Interpretation_of_a_Confidence_Interval_7h8MDB029MQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Correlated_Brownian_Motions_in_Python_4hNgWlUfp4w.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Critical_Values_in_3_Minutes_YyBG3IESj90.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Deep_Learning_Rough_Volatility_Paper_Review_uKcbP6g2f18.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Delta_Hedging_and_Black_Scholes_Prices_jDoLost28tE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Do_Emojis_Predict_Stock_Returns_Quant_Guild_at_UCSD_s_Triton_Quantitative_Trading_915-fyEM9l8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Equity_Trading_and_Tariffs_Yms19aI3eu4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Executive_Compensation_and_Firm_Performance_yFuZDac9fKo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Expectation_Variance_Independence_Covariance_and_Correlation_2eQLnHiJJ7A.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Expected_Stock_Returns_Don_t_Exist_iXNSBn5xqrA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Finite_Differences_Option_Pricing_for_Quant_Finance_uzbveN8n34U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Forecasting_my_Subscribers_for_2023_N0eWsviaXMQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Fundamental_Theorem_of_Calculus_and_Area_of_Bounded_Regions_Kkfu3uZbbwM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Gambler_s_Ruin_Problem_in_Quant_Trading_YNvhjSr_nz0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Geometric_Brownian_Motion_in_Python_qup5fqDoKcg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Graduate_Level_Research_at_an_Ivy_League_University_h_t46xlS-N8.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Hawkes_Processes_for_Quant_Finance_BotPHbWFRUA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Heston_Stochastic_Volatility_Model_and_Fast_Fourier_Transforms_2-oAlnZV6hA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Hidden_Markov_Models_for_Quant_Finance_Bru4Mkr601Q.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Goldman_Sachs_Prices_Variance_Swaps_24-wC8RI7BA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_I_Cracked_the_Quant_Interview_vygK0EXY8ZI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Machines_Learn_Gradient_Descent_Stochastic_Gradient_Descent_Simulated_Annealing_0SX_GAgMNkA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Markovian_Lifting_Solves_the_Rough_Volatility_Problem_Cr7kBSPqD8A.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Physics_Accidentally_Proved_the_Black_Scholes_Model_IIzGqL3ChEs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_Quants_Engineer_Portfolios_1r39EGSm9fw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_a_Quant_Manages_a_Portfolio_JjbBAyu0DmI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_a_Quant_would_Invest_1_000_000_37wRzGdC9w4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_Fast_Neural_Networks_with_GPU_using_PyTorch_xuykp2s3pfg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_Interactive_Python_Web_Apps_in_Seconds_XiYnZ6Dy4v8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Live_Volatility_Surface_in_Python_Interactive_Brokers_5JEeAsQqlro.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Markov_Chain_Regime_Switching_Bot_in_Python_with_Interactive_Brokers_Part_1_GZnCiXMNZcQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Markov_Chain_Regime_Switching_Bot_in_Python_with_Interactive_Brokers_Part_2_CkXljL6eI5A.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_a_Volatility_Trading_Dashboard_in_Python_with_Interactive_Brokers_19-rFVgJVkg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_an_AI_Trading_Bot_in_Python__87QHZXOOKA.txt",
+        "category": "missing_initial_entry_trigger",
+        "reason": "Initial market buy is external to the rule; only later DCA order management is specified."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_an_Earnings_Event_Trading_Dashboard_in_Python_Interactive_Brokers_API_Xtth2F1xm5Q.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Build_an_Options_Volatility_Trading_Tool_in_Python_with_Interactive_Brokers__hFw36wfmds.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Derive_Volatility_Drag_Soea_7rzkR8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Find_the_Black_Scholes_Merton_Partial_Differential_Equation_2iClLEfXuqA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Get_Historical_Market_Data_with_Interactive_Brokers_and_Python_7hezNf49iKc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Live_According_to_Math_yuMKoXmjtNg.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Make_Lose_Money_Trading_WP9fb7AMFsI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Not_Care_What_People_Think_with_Math_AjxnxG2WsHk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Price_Exotic_Options_hsot26myYYM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Price_Options_with_Monte_Carlo_Simulation_2-VRYBKfoyE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Quant_Trade_in_3_Minutes_mZLNzqDZHbA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Read_an_Options_Chain_RrRbz6oXwxE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Simulate_Fractional_Brownian_Motion_fBm_via_Davies_Harte_qQYgbIYz9i0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Think_About_Stock_Market_Bubbles_and_Drawdowns_A6QWWrhDJTc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_NqOj__PaMec.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_Option_Implied_Volatility_kQPCTXxdptQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_Options_Implied_Volatility_Crush_jM7Zd6GU86Q.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_Options_with_the_Black_Scholes_Model_1OByexsEJXc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_the_Cash_Secured_Put_mFovTf-TMvw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_the_Covered_Call_iPsPRQlDeTA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_with_an_Edge_NlqpDB2BhxE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_How_to_Trade_with_the_Black_Scholes_Model_0x-Pc-Z3wu4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Bet_You_ve_Never_Found_Alpha_and_I_Can_Prove_It_UzTJHs3-eT0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Built_a_Social_Network_for_Quantitative_Traders_RO0OUfMqkfk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Made_an_Open_Source_Market_Making_Game_to_Practice_Trading_A9o2El2FN_M.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Made_the_Quant_Roadmap_kLJEXE5_7rI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Met_a_Jane_Street_Quant_at_the_Gym_He_Got_This_Wrong_E73rL7Hex-k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_Ranked_the_Best_College_Majors_for_Becoming_a_Quant_DL_mG-RUFlQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_I_want_the_market_to_crash_aoT3Zln2cak.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Information_and_Stock_Price_Prediction_df9arrckvL8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Introduction_to_Python_0rnZ3yEu2y0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Introduction_to_Python_Chapter_IV_Multithreading_pstj_4rV6yQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Intuition_for_Law_of_Large_Numbers_and_Central_Limit_Theorem_tb5gaJzVrlk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Intuitive_Introduction_to_Brownian_Motion_6yDsKwD9pzw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Inverse_Transform_Method_for_Generating_Random_Variables_1WB8PtKnaqU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Is_Quant_Trading_Gambling_Roulette_Poker_and_Trading_fI3UHYD389g.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Is_Trading_Gambling_Quant_Proves_It_s_Not_With_Math_Logic_GvX8Ragl3ZU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Is_Trading_Luck_or_Skill_Quant_Debunks_Trading_Gurus_with_Math_czEyUZabE2U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Ito_Integration_Clearly_and_Visually_Explained_dUvZ8m3QpeI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Ito_s_Lemma_Clearly_and_Visually_Explained_TgBzqdN24fo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Kalman_Filters_for_Quant_Finance_zVJY_oaVh-0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Life_s_Downside_Variance_Math_vs_Drugs_Edge_Judgement_Ok08aBwfeDY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Linear_Algebra_Linear_Independence_Math_Mondays_hJmX1V5JlRs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Linear_Regression_Clearly_Explained_with_Matrices_y7tYH6Io0Y4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Linear_Regressions_in_Python_xh7HgsReYGk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Managing_Option_Portfolios_with_Black_Scholes_Greeks_Augr2c-PMc4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Markov_Chains_for_Quant_Finance_k8oQfd6M5sA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Markovian_Modeling_using_First_Step_Analysis_oo4Ish9TW7U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Martingale_Volatility_Trading_Q1lxVrLHrYE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Master_Volatility_with_ARCH_GARCH_Models_iImtlBRcczA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Mastering_Markov_Chains_for_Quant_Interviews_b6yrn6FqTvs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Math_Proves_the_Journey_Matters_More_than_the_Destination_hYNxlEKy5Hg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Modeling_with_the_Law_of_Total_Expectation_-CPUbalMh14.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Moment_Generating_Functions_and_Normal_Random_Variables_ZE3Fi4ZH7f8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Integration_in_Python_EnsWVUjpqDE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Pricing_Financial_Derivatives_in_Python_5OAj0vdyGNY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Simulation_and_Black_Scholes_for_Pricing_Options_-1RYvajksjQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Monte_Carlo_Simulations_in_Python_MpiJZ2hl8VQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_My_Approach_to_Solving_Quant_Interview_Questions_Optiver_Example_pyD-zXuP8Qo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_My_Life_as_a_Quant_n1Z90Iwc_co.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Natural_Language_Processing_NLP_for_Quant_Trading_6llKh4kQBYs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Neural_Networks_for_Quant_Finance_n5acv8R-lN8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_No_You_don_t_need_to_backtest_a_trading_strategy_KD_fh_jA_iQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Non_Stationarity_and_Why_Market_Timing_Fails_7nvjrgqKjJE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Non_Target_to_Quant_How_to_Get_a_Quant_Job_in_3_Steps_qBSrjoTdQpA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Normally_Distributed_Returns_and_Value_of_an_Annuity_Due_muHL4mQhMZE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_People_Publish_Trading_Strategies_Tetlock_2007_Paper_Review_-B3WduveTV0.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Poisson_Processes_for_Quant_Finance_oug0vzbwISQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Profitable_vs_Tradable_Why_Most_Strategies_Fail_Live_fzz22JNg9HE.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Python_Bachelier_Model_Simulation_in_3_Minutes_5BKmO7zNDkM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Python_Multithreading_in_3_Minutes_NGLeprazvkM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Busts_3_Trading_Myths_with_Math_wJfIk3VnubE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Derives_Volterra_Process_Discretization_and_Simulation_in_Python_ifwhZDCjAgo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Explains_Algorithmic_Market_Making_aVzFKwyzwM0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Explains_Backtesting_with_Poker_xJJ1nWj9Rto.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Explains_Risk_Neutral_Option_Pricing_wYpg0TGxvgM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Finance_in_3_Minutes_2-gEfXQZFr0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Guild_s_Macroeconomic_Outlook_03_03_2024_cRN0rwWSXEw.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Interview_Questions_Consecutive_Coin_Flip_Payouts_lGJ6z_jHFwM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Interview_Questions_Probabilities_of_Minimum_and_Maximum_Functions_dGzsOXNRbQY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Investing_for_Beginners_aBfkf_0YsCY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Paper_Review_P_buy_side_versus_Q_sell_side_Quants_i8-L9Aqm20c.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Portfolio_Management_and_Volatility_Drag_YDjOBWb5iG8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Proves_Trading_Can_t_Be_Taught_But_You_CAN_Learn_This_uivlsPk0WLQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Ranks_Retail_Trading_Mistakes_that_Blow_Up_Your_Account_1mpNxBaBeOw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Responds_to_and_Corrects_YouTube_Comments_CFqo-BMtKgY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_Trader_on_Retail_vs_Institutional_Trading_j1XAcdEHzbU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_on_Trading_and_Investing_CKXp_sMwPuY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quant_vs_Discretionary_Trading_3gblERSSHXI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_Episode_001_Time_Value_of_Money_AGjDaoFMZsw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_Episode_002_Equity_Options_I_hgerQvti_SU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_Episode_003_Equity_Options_II_ytMfmVDKJ7s.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Quantitative_Finance_in_Python_Q_Fin_Python_Library_g9HIk8EQCzw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Risk_is_Always_Mispriced_Pretty_Girls_Public_Speaking_Quitting_Your_Job_MlUSlKD8JTg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Simulating_Brownian_Motion_in_Python_1XeA-fkjppY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Solving_Geometric_Brownian_Motion_y0s2GXREymI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stochastic_Differential_Equations_for_Quant_Finance_qDAeSC40ZJE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_StockTwits_Social_Sentiment_and_Analyst_Recommendations_to_Optimize_Trading_Strategies_q9lTerSyptI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stock_Picking_is_Worse_than_Gambling_at_a_Casino_I_Can_Prove_It_E2PuxT_SucA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stock_Price_Process_Intuition_for_Equity_Derivatives__c_P5TqiiTE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Stop_Using_the_Sharpe_Ratio_Until_You_Watch_This_NJ5PNfIQHrE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_5_Papers_that_Built_Modern_Quant_Finance_ZwS1gMGegrM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Gaussian_Cookbook_for_Aspiring_Quants_GyrcydIWJpo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Math_of_Burn_the_Boats_Why_Hedging_Ruins_Everything_20PEEtXrqUI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Mathematical_Delusion_of_Retail_Trading_RBfc8SkRwwU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Mathematical_Trap_of_Just_Buy_SPY_sgbEkAYAdwk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Method_of_Maximum_Likelihood_Estimation_fbqNL9ae6yU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Normal_Distribution_in_Python_YRCOHV27H6U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_Normal_Distribution_mBXgdjlqSjc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_The_reason_you_want_a_Ferrari_is_why_you_don_t_have_one_bX-mT1pZFho.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Time_Series_Analysis_Why_are_Unit_Roots_Important_lCwg599tCm4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Time_Series_Analysis_for_Quant_Finance_JwqjuUnR8OY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Time_Value_of_Money_and_Computing_Compound_Interest_XFWxQJvwAus.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Top_5_Python_Tricks_in_5_Minutes_AtJ2DLo8dKY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trader_Skill_or_Market_Luck_Quant_Explains_Alpha_in_3_Minutes_Ivz58kZLD2U.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trading_Mean_Reversion_with_Kalman_Filters_BuPil7nXvMU.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trading_with_Violated_Model_Assumptions_2ezWtM8J_os.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Trading_with_the_Black_Scholes_Implied_Volatility_Surface_YH0tWpBaKGs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Ultimate_Options_Trading_Crash_Course_-lQdlJh8cCE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Understanding_and_Calculating_Option_Greeks_in_Python__ta4Hhox1Vc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Uniform_Probability_and_Binomial_Random_Variables_7C72-fuccio.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Vibe_Coding_an_Options_Trading_System_FdqvAuHOQeE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Volatility_Risk_Premium_Explained_Implied_vs_Realized_Volatility_kmAE9ZhQ0jU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Volatility_Trading_101_with_Python_aozWosFLAEY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Watch_a_Quant_Try_To_Do_2_Digit_Mental_Multiplication_l2fX3jMC4h0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Web_Application_Development_in_Python_Ajax_and_JavaScript_v2TSTKlrPwo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Web_Application_Development_in_Python_Intro_to_Flask_and_Jinja2_RF1it3i9qzE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Welcome_to_Quant_Guild_hkDmPbU3DsQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_Does_AI_Actually_Learn_tX7b2KT63WQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_Happens_when_the_Expectation_is_Infinity_GF2lJ-G2BYc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_are_European_Options_HgjeDJVCHSo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_is_Market_Implied_Volatility_VzieTIsBaHM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_What_the_F_ck_is_Alpha_And_How_to_Actually_Find_It_21SONVlvkDQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_When_Does_a_Trading_Strategy_Actually_Need_to_be_Secret_WsEwKlr_1lA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_I_Quit_Being_a_Quant_Researcher_QNYstoX0u1k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Monte_Carlo_Simulation_Works_-4sf43SLL3A.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Most_Traders_Lose_Ergodicity_for_Quant_Trading_dryV1qJYUw8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Poker_Pros_Make_the_Best_Traders_It_s_NOT_Luck_JuD3KGQhofw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Portfolio_Optimization_Doesn_t_Work_eZIITtd3UfY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Quant_Models_Break_Wall_Street_s_Dirty_Secret_brdG1TmsPlw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Quant_Traders_Care_About_Pricing_s0lVvYMA5OA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Trading_Metrics_are_Misleading_Unless_This_is_True_K-aUu_M02-Y.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_You_Shouldn_t_Be_a_Quant_Unfiltered_Io49x7t0sZI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_Your_Backtests_are_Wrong_Markov_Property_for_Quant_Trading_w-EbZ6Xct_E.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_is_the_Definition_of_a_Derivative_Useful_CD8XYP4lq4g.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Why_your_Trading_Strategy_Sucks_8kBpVelo9Tg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Will_AI_Replace_Quants_jzQSgTGWCIw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_Workshop_Wednesday_Check_In_jjoLCmXkv9E.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/QuantGuild/large_v3_turbo_You_Don_t_Find_a_Passion_You_Build_One_92dW2ZDTsJg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      }
+    ]
+  }
+}

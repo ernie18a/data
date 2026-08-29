@@ -1,0 +1,1284 @@
+{
+  "schema_version": "1.0",
+  "files": [
+    {
+      "source_ref": "/g/data/TradingLabOfficial/.lite/source_inventory.json",
+      "hash": "d4e675efd939fb267e1f3e4f73de2d474ceb5c933df43887066239458b3aaf61",
+      "status": "ignored",
+      "reason": "target_dir",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/.lite/strategies.py",
+      "hash": "f4f87d1bb56f8841527950d98d29ca05ca943330a98cd94424fecf8c66efdee6",
+      "status": "ignored",
+      "reason": "target_dir",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_10_EPIC_Hidden_Gems_on_TradingView_hQ4M1rib9HY.txt",
+      "hash": "2df85e5e79399f175d710612bb4cf517a9982288d74c62876bed33b3fddd94ce",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_A_Once_in_a_Lifetime_Economic_Reset_is_Coming_L1bQnXn9IoE.txt",
+      "hash": "326ca67c3ad4257ae132bac475c8a2402fbf31e10a920de53b3cfb07c1cadb81",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_BEST_MACD_Trading_Strategy_86_Win_Rate_rf_EQvubKlk.txt",
+      "hash": "3dedb898b4acb8f2bca9fa22992eefaed8cd5567c7645e70c97730497a341293",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_BEST_Scalping_Trading_Strategy_For_Beginners_How_To_Scalp_Forex_Stocks_and_Crypto_XBcMiYK7qYY.txt",
+      "hash": "057032f80e456585e36afb032fadd009cfb8c1f5958973a5941844d4a4fb0847",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Best_Finviz_Screener_Settings_Find_Stocks_Before_They_EXPLODE_CJoN7wLfWNo.txt",
+      "hash": "b33ed9ec1fbf69c3123af48e54abd7a05ba8d41b2f06f084e70f9d774b9b2a19",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Bollinger_Band_RSI_Trading_Strategy_That_Actually_Works_pCmJ8wsAS_w.txt",
+      "hash": "e69510e74d4e01b6704a1c5042cf0d4896a3332261cca98feb692f982aac08db",
+      "status": "processed",
+      "outputs": [
+        "strategy_shard_000.py",
+        "strategies.py"
+      ],
+      "source_logic_ids": [
+        "tradinglab_bband_30_2_rsi_13"
+      ]
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Candlestick_Patterns_Don_t_Work_Unless_You_Do_This_wIeYqqXcgtU.txt",
+      "hash": "20b650b77cc2e868113294311b87743009da30653459fc6b56500c8dc27fe20d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Charlie_Munger_Why_Diversification_is_For_Idiots_zZT9OLwR2Z0.txt",
+      "hash": "c11b433904257b15d4fcf58037900de957e21dc8c28e2b3a1f43877e080ff661",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_DAY_TRADING_Explained_in_11_Minutes_edfHZq5lrTA.txt",
+      "hash": "ee09ab17e6753ee4694afaf8a30d454291c079d0c96cf33cc4278bb56a1fec4f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Do_This_To_INSTANTLY_Become_More_Profitable_BI_W4URQ7U0.txt",
+      "hash": "4e4b7dfaecd347baa73bd95826fc92a0d2c66c6623aa7932b47cf3cb033904e6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_EASY_Scalping_Strategy_For_Day_Trading_High_Win_Rate_Strategy_bKPs2aOsvsk.txt",
+      "hash": "7ec59daa9e211fa1b180159a402c74d7a893c6bb9254cebaf93652e173811149",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Four_Price_Action_Secrets_The_Ultimate_Guide_To_Price_Action_0L6Rcgp6j7Y.txt",
+      "hash": "8aae962d6eb6c8f7badbf9d483d7dcea7777c60c36037a86add064db165d6c84",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Genius_Trading_Advice_For_15_Minutes_Straight_gYzEtRqk3Mc.txt",
+      "hash": "8f6a3abaa2b2c0ef12b29ed538df431c76d00ede2f38f56d6a363123b5a38939",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Get_PERFECT_Entries_Using_Fibonacci_Retracement_Rbas7vi_CS8.txt",
+      "hash": "ec2df1c720134dc0d216aee7bf1c44b2b3bc3e19f7f60bd59c23b74d67b70556",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Highly_Profitable_DEMA_SuperTrend_Trading_Strategy_g-PLctW8aU0.txt",
+      "hash": "00b6bddf78a3fa3fcd209cededaf56d01c790ca85c310d80fcc355c7bb81fff0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_Hedge_Funds_Manipulate_The_Stock_Market_rrKJkkb_EHI.txt",
+      "hash": "ea5135212740d46c3898a6a770ccef6a37fc39466b24d70e4accf8cf55d32439",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Avoid_False_Breakouts_New_Technique_9azX4PfaW3A.txt",
+      "hash": "a88f977d60f79eb09b61c724e5d551c978cf25f0283f695e431c230ed239cb93",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Find_Altcoins_BEFORE_They_Explode_t5je_tY5CrI.txt",
+      "hash": "c53b1a9d2391640b2b56dcbed58181d6ae8f48a6e898e560bc9c2e34e0730438",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Find_Reversals_Never_Guess_Again_sNKfxl4yHzw.txt",
+      "hash": "eba2a39d853409996ffacc2c798c3d45651e3efd5f2d930b017de8b31c76b50e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Made_70_536_Day_Trading_in_60_Days_jOf-ahjQUH4.txt",
+      "hash": "7349b5566f6fd07e6e53771c2be7bd6e994842f57d282fb8f6001a6119e3435c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Would_Learn_To_Day_Trade_If_I_Could_Start_Over_LJR8v7XKt6g.txt",
+      "hash": "311a596cee431b9d787035833e7ff2cdfb703c3cc5bea6a6fcf2bf76e9d151c2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Would_Learn_To_Trade_If_I_Could_Start_Over_F6HKKVi1EZY.txt",
+      "hash": "8d4ca89d6bd78974c03456fb73eaf46aafbb6a5ed2309e8f97512934b8c524cf",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_She_Made_MILLIONS_Using_The_MACD_mJqnG6-7kSs.txt",
+      "hash": "d649e570e7c890afbac9111bd95d57cb00023dc901642539fe351251f583dcf3",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Avoid_Consolidating_Markets_My_Secret_StvsfMYSTrw.txt",
+      "hash": "868f2a8cf361839412f2c63208710287129e0f145d8f08055f1179f41c01f7ba",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Day_Trade_As_A_Complete_Beginner_l0UsErg8OLA.txt",
+      "hash": "b2cb084f4670190747f846b1b8c5312d80b0d656bd3b1cff9d129d454d3d372f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Double_Your_Account_Size_Within_30_Days_aFC7uTJrQdc.txt",
+      "hash": "7d8e04ff9259aa83433849aaee1f5657aa422cc348d0bfed99b2359ae5676276",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Find_Stocks_To_Day_Trade_Wk-h2CwEH5k.txt",
+      "hash": "93b9b94f87b77a73174cee8a41c9fb8b1a89b98a1aa5e184282d79030a0bf63b",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Get_AMAZING_Entries_My_Secret_Technique_IyrbbmKv3RE.txt",
+      "hash": "839ec033520e41a1b62ea3381edbca30372b37f48c6618bc2e96afa6eb21be6d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Grow_A_Small_Stock_Account_5nPRbWwxPUQ.txt",
+      "hash": "9c7a6d2f4eddcd42f6b6523c6be2a94233ddf8246f9a1d687cc3c2fe74342817",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Grow_a_Small_Trading_Account_LJRC6WRBmEg.txt",
+      "hash": "b8ba12021bf5418684befd4104637201a4960e21cbcf1910e272c8ab4e3c4577",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Identify_Trends_in_Markets_Never_Guess_Again_21b5QF-b0rE.txt",
+      "hash": "c6760ffeddaaa33e2d75ca8e2a2b6ee7c63b5e66a498c3385a2d96169d432be5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Know_When_To_Buy_Sell_Crypto_Currency_frqKQMaRK_E.txt",
+      "hash": "57f38d273a96d2ae4f0054aac3fb5f29b7488cbd3690d4127a06974ecdfc7130",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Know_Where_to_Set_Your_Stop_Loss_txXUUeMDos8.txt",
+      "hash": "7ebfa415a4008638149f22f0e11089102b7fcd56b860a75e3d619701bb9673ac",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Read_Level_2_Market_Data_vhOCI2eXP8E.txt",
+      "hash": "7e06f7c7204f808dc337bad138d536b2730f3e60787d6d445643bd19509e5454",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Retire_A_Millionaire_On_A_Low_Salary___GgylTdKmA.txt",
+      "hash": "aa5a9e579fea1996f75117d9ab9d30970ac676edc0b28d8d868b99d59066b753",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Crypto_As_A_Complete_Beginner_nnDhFKHQRjc.txt",
+      "hash": "621d5d525f47aeb6fbbf672bb8f6d569d9afd858ea1832b855283812119414f6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_Ep_2_I9unIJnobQU.txt",
+      "hash": "a5dbcb2862102c2cd019b9e54ec057dd48f470e3b48aa4a321f5a052eb625fe4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_Ep_3_1QZgFes-2oA.txt",
+      "hash": "0fcc108a0106ce120c7f25dd0da3e9d40bea5c4163b9f2a3fdb89b7069b0f07c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_Ep_4_LALSCcgJCPc.txt",
+      "hash": "e82f89e75a47b5ea7f77575c84d1b674d36a26d926fe09b2bf41cd3c38a2467e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_i5OZQQWj5-I.txt",
+      "hash": "8ded5f178a71bb62cbd0f61afa2d322d8f98e9234ce6e4959fd1ea1a110396b1",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Use_The_2023_Market_Crash_To_Get_Rich_iejtmtoCvq4.txt",
+      "hash": "f6dd01ac0807eb171f46e2328af023446c17fe69b481d655b31c4f6eed4cb135",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Use_TradingView_For_Beginners_My_Secrets_RPwg5Vg-wnM.txt",
+      "hash": "5080a1c88fa686e0a5a8280b2ef8a7d31554d4c9f08a044bc8429974fd7d747e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_to_Avoid_False_Breakouts_My_Secret_Technique_ZudTPpJCbbA.txt",
+      "hash": "5c5d228870af4520bae7e45a96f631040ea48e68c76b50712d8d6ba2a3a023d7",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_to_Backtest_a_Trading_Strategy_on_Tradingview_OwvElpGjLKI.txt",
+      "hash": "cb3dc395620f6de00ce4d33c7c07852764cce58c81234ba4370ccf677c9e946d",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_to_Tell_If_a_Stock_Is_UNDERVALUED_or_OVERVALUED_d9brQ4uTYxY.txt",
+      "hash": "12ff78b58709a4486781b220add71a9fc339f31a914229d61ba88ee4c1d9c162",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Added_Machine_Learning_To_An_Indicator_O1QTi40BoC4.txt",
+      "hash": "5723c766ec1d0bedcb4c848aa106a41e084eb0c53e712d170a5b469ec32b3a52",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Copied_Politician_s_Trades_For_a_Month_5vajkhwbIG4.txt",
+      "hash": "fe32dc6ac2f32f01f15828ef7f7e77c014f82a6d91da7a4d8b8a2ee9604e9000",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Created_A_FREE_Indicator_It_s_Amazing_tqlZN_xAydQ.txt",
+      "hash": "4f60db3909c7efca87e2207c2d4148603d5a4ea90b0cb3b86aca8de0f8b517b6",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Created_An_Indicator_To_Copy_Hedge_Funds_qoKwgUTCwWQ.txt",
+      "hash": "8d8714784b504938b919da7fc83eb2694e184ea5c5a8a4d20195b373f18ff3a8",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Created_The_World_s_BEST_Indicator_seriously_gVltpoP3HSY.txt",
+      "hash": "3b87ab840ff03bae008f26e68ed8881a5876e3d3d68d280088cfa83cc0a3dbfb",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_A_Secret_To_Fair_Value_Gaps_ZTMregh_428.txt",
+      "hash": "bc59fbbc30c885538b1f8a7539e5902030cdd2e559c6535b2548db4320197710",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_The_4_BEST_Confirmation_Indicators_8TqdpJD5WPQ.txt",
+      "hash": "35631b36756b45818920a47997606192fb832241c752238291a9c3ac8d22bc89",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_The_Secret_to_Technical_Analysis_p-HKL7NmDxs.txt",
+      "hash": "0255a091fec67fa1e14e4502c57b30bf7ad25c4b40eedacaf17e7e41a21e5e38",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_a_Secret_To_Orderblocks_qmsGqitE2LE.txt",
+      "hash": "736ca7a52a4065a21b05e055f8a4eb3e24df2b11c0f2b89cefce55cf0c72eac5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_an_UPGRADED_Version_of_The_Heiken_Ashi_as2HK0ACjI8.txt",
+      "hash": "94b9970cb0e011d964e1587bca4c8083ae518a80e1298d324b5ff7eeb97b09c1",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_an_Upgraded_Version_of_The_MACD_INSANE_auK8PGULXXw.txt",
+      "hash": "4865d9a07f373e84078cd0ae92865e6c7e649556aa7ba7c55fc559c869ee78ff",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Gave_an_Ai_Bot_30_000_to_Trade_Stocks_P9iWPk7IW-M.txt",
+      "hash": "89d82966236bc53cdb8f39342c10a5e4914386a01f1d43340a7ca1d916441729",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Made_A_Breakout_Probability_Tool_ITS_AMAZING_A-oxG8MwDkw.txt",
+      "hash": "c12876e5b7839400220860519efe69c02c6a226935eef4662fb8d2b64f704a30",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Ranked_The_Most_Popular_Trading_Indicators_nRPNt-Cnkl4.txt",
+      "hash": "ea1fc93dd430a082a0f4b33845e5453d4466740e23c9402dac94dda506e09de1",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Reveal_My_Day_Trading_Strategy_lxg-6QdBI6k.txt",
+      "hash": "f9d28932561db411cb7f9e0528298ad0f84cf12f4a0ddaa8ef2061021f3dcd67",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Reveal_My_Most_Profitable_Trading_Strategy_fi7OxEzvhjw.txt",
+      "hash": "f501cb5ec8d6fff2c9307147f4210a05c3dd4999ffb654314a622a25e97207d1",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Reveal_My_Reversal_Strategy_AMAZING_4cT8WTyxhYY.txt",
+      "hash": "7907d0a456d5ab38539b288a439d53c13c14eec231743d6e7addfa2273381ff9",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_A_CRAZY_RSI_Scalping_Strategy_100_Times_cxZOD1iOKVc.txt",
+      "hash": "cd0c16cffe761f39abd8741149dea55d6c003b3c8e711b8b424cf768e925c6df",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_Divergences_Do_They_Actually_Make_Money_RolCMR0WH4k.txt",
+      "hash": "c3218ac0863c7228c7be77d00667a8b8500d86c52c3005c369a47f8f2fbe1240",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_The_MACD_Does_It_Actually_Make_Money_1pklphKzE7A.txt",
+      "hash": "da4a2300e976dea1c5e817504f9c4091fa65100f1ce8e44a79f06ae8489252df",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_This_Strategy_And_It_Profited_1_040_lDxNPG0VPlI.txt",
+      "hash": "06cd7336a84b56f5ec9518810bd2159cbde8fe2ec2d1a8a7bf462a7dd5f905b6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_If_Your_Chart_Does_This_BUY_sfkF5bKVl28.txt",
+      "hash": "d7d42134d530cde8b5845dc172d3f9bec7231e9aa6a506f83a9a660270e5bd7c",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Investing_For_Beginners_Start_With_Just_100_J5Gy_nYIO1o.txt",
+      "hash": "dec5e6167fb8962f81833784119b7e87e30ba24abe9de18483cada1088b8260e",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_It_s_Coming_ZPSLoK1gwFs.txt",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Price_Action_Is_Hard_Until_You_See_This_fe2JO2e49P0.txt",
+      "hash": "300dfc841a6c0aca7b38cc469af17d28fb0e6ffdbd55ae4e031292a48f2df9ae",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Secret_Formula_For_Drawing_Support_Resistances_9NbmBDUysOA.txt",
+      "hash": "6d9f787f293fbbb6e48b68235028e49b9b567f33293a013e3de14ed5a843bde2",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Smart_Money_Concepts_The_Blueprint_To_Trade_Like_Banks_FNUeYlhbXkU.txt",
+      "hash": "ab2464aa0b8811951394d342ebea5a74d2eacd2b74aff8d94adac449543670fb",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Stop_Taking_Trades_Until_You_See_This_Pullback_Ju-cTa_dHAk.txt",
+      "hash": "1f1afb1ce0ad97a1910069684223e81f504602a8d6d65008f90b1a4cbd83eff4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_TOP_3_Trading_Strategies_Explained_in_8_Minutes_j8Q3MIwGYOk.txt",
+      "hash": "684e246d489cf9aa8ab69dbf87a6512b914fb1ec0f7d99a9525c30f85837ca8f",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_1_Trading_Indicator_on_TradingView_v6OxMgYptFs.txt",
+      "hash": "d6bd9afefe7f2b3026944235e2c4efdc1bac2ece28bf79541183083792f21e96",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_6_Biggest_Trading_Mistakes_You_re_Probably_Making__T7-bzowp7k.txt",
+      "hash": "82b513412b1135bfbe5650ff1bf77c9b199a9fa128306b4819b6a0b44c02af82",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Greatest_Crypto_Trader_to_Ever_Live_BAPF8Ng_bvs.txt",
+      "hash": "12141d9b1c3346d06a447f22e29e46616fce1dc82bcf40b66b3a2c5b635f4463",
+      "status": "skipped",
+      "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Heikin_Ashi_Trading_Strategy_Simple_Effective_2G78zkuQSc0.txt",
+      "hash": "faf727d96ea40f9e171c341788589a1879f77a818d5efdabef6a120ce5c1c3b6",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Housing_Market_Bubble_Just_Popped__7c82-V5cnU.txt",
+      "hash": "257b32184dd633ee1af83825361f4af5a001a0f20ce5fa0516b4c0bafe4aa4b0",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Most_Powerful_Strategy_I_ve_Found_Yet_c8QjxXAGxtw.txt",
+      "hash": "8e21cce1bdec5825375d5a8b1c4d71cfddf18a916ae0ae74b7b331a81247c663",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ONLY_Candlestick_Pattern_Guide_You_ll_EVER_NEED_tW13N4Hll88.txt",
+      "hash": "c9ab84127a1fb01172c38d6452dc9b5740f867c2e434e95c5e22bedf581956df",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ONLY_Orderflow_Guide_You_ll_EVER_NEED_ljk9BovCSqI.txt",
+      "hash": "f7d3543bb3b728e0c552b2e9b3e7c6daa42968629f81fa89e1ef097040a9856a",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ONLY_Supply_Demand_Guide_You_ll_EVER_NEED_1z382y4v39Y.txt",
+      "hash": "bfc9b0050f1580cef493a86ee17d46eb0fd0ee100edd21ecd7b3f049f040c5e5",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Fibonnaci_Guide_You_ll_Ever_Need_vMQ0cYlDkA8.txt",
+      "hash": "56501a9f723a08e26183c544917b9e735a1aa6f6a867ab372d5fea125a8b3d94",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Indicator_You_ll_Ever_Need_HFKRgIRzeQ8.txt",
+      "hash": "82f57d5472b3da0894f72ce991bbcaa9e33b17286407f3c7d5cb1448d7d8c3be",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Liquidity_Guide_You_ll_EVER_NEED_9REzGB3R6HU.txt",
+      "hash": "aab270b62254b1700132725034d29dd4635447208e98a1d3c69ef7c1b4c771f5",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Trading_Strategy_You_ll_Ever_Need_e-QmGJU1XYc.txt",
+      "hash": "9b5d6da0803a7220bc62e3756f72fd4eed3b9805cecdb97d4f5ee1e651820a9a",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Secret_To_Using_The_Volume_Profile_3X95la3CCS0.txt",
+      "hash": "184f2ab125b2bd7f351cc2cea9e6473ba4ecc0bae329bc6a09a3b36c566d71b9",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Strategy_That_Made_Him_1_1_Million_In_12_Months_9JEmsSItdt4.txt",
+      "hash": "215c456c21fbd4fc711650b6e18151cab9c0c91e0697c2d9e4cf7437306c3e84",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Trading_Strategy_That_Made_Him_153_Million_jU2YQC7TC0k.txt",
+      "hash": "ea7a05560d4963da0c48a58d55a6ffd0964967352f71ddd3c3491b9f43a50b58",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Trading_Strategy_That_Made_Him_1_4_Million_T2tcUgQeoPI.txt",
+      "hash": "ae2112c1f7d8c59c340953987d4eef6df7487020a45a1945031fb86a9217dcf4",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Trading_Strategy_That_Made_Him_82_Million_gtTt_7E89TA.txt",
+      "hash": "2794a7747342b6b8ac72aec07beb85a2b4e463ad7a482d016315bc1ce4710197",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ULTIMATE_Fibonacci_Retracement_Tool_Guide_Best_Tips_Tricks_iL76k2A9ono.txt",
+      "hash": "1d4973ac318fc5a6fa4739b8b04600c0ea2e39acbc72df14d5199ba82076dcd5",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ULTIMATE_Supply_Demand_Guide_My_Secrets_fPSQ_NnmqWI.txt",
+      "hash": "e556c3fcbabeeb22bb3ce7b98f4782756d6f1e5ea90d514b96663401373889bd",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_Gap_is_About_to_Break_The_Stock_Market_ICqUb68YGcU.txt",
+      "hash": "4893906a69b3e6fff9685f4b6ec482aefb554b2def9a41c6651818511300cd18",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_Indicator_Predicts_The_Future_BDaQhZ8wPbk.txt",
+      "hash": "0dd596a55b5937ff2fa63bf43bcdd91e2787bbe168df85114480b6cfc3b805bb",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_One_Candle_Can_Change_Your_Life_fGZId6WmCns.txt",
+      "hash": "9083429ba44d2cfe8dbdedf4a789af4a62b45cd82f64e28c7fee45e8c5c4baf3",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_Trading_Mistake_DESTROYS_Trading_Accounts_bwgPf5A-Hh0.txt",
+      "hash": "ecfa2310e436648743990c372cc0278de81cf4a95c78b8cb702f5e35696797dc",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Top_5_FREE_Trading_Tools_for_Beginner_Traders_2024_e7vzK-fEQks.txt",
+      "hash": "6c628c9af1ad88fe94c0e939c017107803bca3f7f4ac852f9a7adfdfea2032cb",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Triangle_Trading_Pattern_Tips_My_Secret_Strategy_WAAy0YVxUEw.txt",
+      "hash": "3971d723ddc3573961873c5a007748333b10d15bab21b54da448b2e5a3983f96",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Turn_100_Into_10_000_With_This_Trading_Strategy_B4ch-Lf8wJc.txt",
+      "hash": "bc786ef574e83bc7dea10a6fb2945de3b26f3f4519c7b7a273a1ab43d61dba61",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Volume_Doesn_t_Work_Unless_You_Do_This_aVt0WUJuV6E.txt",
+      "hash": "adea1f4e325ebd0711a0acbc4171778f39ec461285e098ed5d6882d6997d7f43",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Warren_Buffet_How_To_Invest_in_2022_fIAEwjoCyDg.txt",
+      "hash": "7bc6da1885e50d1dca288eae975e793e586994b574b1cbe672fd33d6280dd688",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_What_Do_Hedge_Funds_Think_of_Technical_Analysis_f19bfHpCths.txt",
+      "hash": "3057ef6d7332b1dce49b126168b19bc084d29323c9fcd2c01d158353112c2c61",
+      "status": "skipped",
+      "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close.",
+      "outputs": []
+    },
+    {
+      "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_You_re_Using_The_RSI_WRONG_NT_qg2qPR1c.txt",
+      "hash": "3b0a05198aef856da2535700347790b5a9bc82407e3cba0acde783096ff39f6c",
+      "status": "skipped",
+      "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule.",
+      "outputs": []
+    }
+  ],
+  "candidate_decisions": {
+    "risk_only": [],
+    "skipped": [
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_10_EPIC_Hidden_Gems_on_TradingView_hQ4M1rib9HY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_A_Once_in_a_Lifetime_Economic_Reset_is_Coming_L1bQnXn9IoE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_BEST_MACD_Trading_Strategy_86_Win_Rate_rf_EQvubKlk.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_BEST_Scalping_Trading_Strategy_For_Beginners_How_To_Scalp_Forex_Stocks_and_Crypto_XBcMiYK7qYY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Best_Finviz_Screener_Settings_Find_Stocks_Before_They_EXPLODE_CJoN7wLfWNo.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Candlestick_Patterns_Don_t_Work_Unless_You_Do_This_wIeYqqXcgtU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Charlie_Munger_Why_Diversification_is_For_Idiots_zZT9OLwR2Z0.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_DAY_TRADING_Explained_in_11_Minutes_edfHZq5lrTA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Do_This_To_INSTANTLY_Become_More_Profitable_BI_W4URQ7U0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_EASY_Scalping_Strategy_For_Day_Trading_High_Win_Rate_Strategy_bKPs2aOsvsk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Four_Price_Action_Secrets_The_Ultimate_Guide_To_Price_Action_0L6Rcgp6j7Y.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Genius_Trading_Advice_For_15_Minutes_Straight_gYzEtRqk3Mc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Get_PERFECT_Entries_Using_Fibonacci_Retracement_Rbas7vi_CS8.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Highly_Profitable_DEMA_SuperTrend_Trading_Strategy_g-PLctW8aU0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_Hedge_Funds_Manipulate_The_Stock_Market_rrKJkkb_EHI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Avoid_False_Breakouts_New_Technique_9azX4PfaW3A.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Find_Altcoins_BEFORE_They_Explode_t5je_tY5CrI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Find_Reversals_Never_Guess_Again_sNKfxl4yHzw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Made_70_536_Day_Trading_in_60_Days_jOf-ahjQUH4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Would_Learn_To_Day_Trade_If_I_Could_Start_Over_LJR8v7XKt6g.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_I_Would_Learn_To_Trade_If_I_Could_Start_Over_F6HKKVi1EZY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_She_Made_MILLIONS_Using_The_MACD_mJqnG6-7kSs.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Avoid_Consolidating_Markets_My_Secret_StvsfMYSTrw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Day_Trade_As_A_Complete_Beginner_l0UsErg8OLA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Double_Your_Account_Size_Within_30_Days_aFC7uTJrQdc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Find_Stocks_To_Day_Trade_Wk-h2CwEH5k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Get_AMAZING_Entries_My_Secret_Technique_IyrbbmKv3RE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Grow_A_Small_Stock_Account_5nPRbWwxPUQ.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Grow_a_Small_Trading_Account_LJRC6WRBmEg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Identify_Trends_in_Markets_Never_Guess_Again_21b5QF-b0rE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Know_When_To_Buy_Sell_Crypto_Currency_frqKQMaRK_E.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Know_Where_to_Set_Your_Stop_Loss_txXUUeMDos8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Read_Level_2_Market_Data_vhOCI2eXP8E.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Retire_A_Millionaire_On_A_Low_Salary___GgylTdKmA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Crypto_As_A_Complete_Beginner_nnDhFKHQRjc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_Ep_2_I9unIJnobQU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_Ep_3_1QZgFes-2oA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_Ep_4_LALSCcgJCPc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Start_Trading_Stocks_As_A_Complete_Beginner_i5OZQQWj5-I.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Use_The_2023_Market_Crash_To_Get_Rich_iejtmtoCvq4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_To_Use_TradingView_For_Beginners_My_Secrets_RPwg5Vg-wnM.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_to_Avoid_False_Breakouts_My_Secret_Technique_ZudTPpJCbbA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_to_Backtest_a_Trading_Strategy_on_Tradingview_OwvElpGjLKI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_How_to_Tell_If_a_Stock_Is_UNDERVALUED_or_OVERVALUED_d9brQ4uTYxY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Added_Machine_Learning_To_An_Indicator_O1QTi40BoC4.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Copied_Politician_s_Trades_For_a_Month_5vajkhwbIG4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Created_A_FREE_Indicator_It_s_Amazing_tqlZN_xAydQ.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Created_An_Indicator_To_Copy_Hedge_Funds_qoKwgUTCwWQ.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Created_The_World_s_BEST_Indicator_seriously_gVltpoP3HSY.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_A_Secret_To_Fair_Value_Gaps_ZTMregh_428.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_The_4_BEST_Confirmation_Indicators_8TqdpJD5WPQ.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_The_Secret_to_Technical_Analysis_p-HKL7NmDxs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_a_Secret_To_Orderblocks_qmsGqitE2LE.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_an_UPGRADED_Version_of_The_Heiken_Ashi_as2HK0ACjI8.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Found_an_Upgraded_Version_of_The_MACD_INSANE_auK8PGULXXw.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Gave_an_Ai_Bot_30_000_to_Trade_Stocks_P9iWPk7IW-M.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Made_A_Breakout_Probability_Tool_ITS_AMAZING_A-oxG8MwDkw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Ranked_The_Most_Popular_Trading_Indicators_nRPNt-Cnkl4.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Reveal_My_Day_Trading_Strategy_lxg-6QdBI6k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Reveal_My_Most_Profitable_Trading_Strategy_fi7OxEzvhjw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Reveal_My_Reversal_Strategy_AMAZING_4cT8WTyxhYY.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_A_CRAZY_RSI_Scalping_Strategy_100_Times_cxZOD1iOKVc.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_Divergences_Do_They_Actually_Make_Money_RolCMR0WH4k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_The_MACD_Does_It_Actually_Make_Money_1pklphKzE7A.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_I_Tested_This_Strategy_And_It_Profited_1_040_lDxNPG0VPlI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_If_Your_Chart_Does_This_BUY_sfkF5bKVl28.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Investing_For_Beginners_Start_With_Just_100_J5Gy_nYIO1o.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_It_s_Coming_ZPSLoK1gwFs.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Price_Action_Is_Hard_Until_You_See_This_fe2JO2e49P0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Secret_Formula_For_Drawing_Support_Resistances_9NbmBDUysOA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Smart_Money_Concepts_The_Blueprint_To_Trade_Like_Banks_FNUeYlhbXkU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Stop_Taking_Trades_Until_You_See_This_Pullback_Ju-cTa_dHAk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_TOP_3_Trading_Strategies_Explained_in_8_Minutes_j8Q3MIwGYOk.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_1_Trading_Indicator_on_TradingView_v6OxMgYptFs.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_6_Biggest_Trading_Mistakes_You_re_Probably_Making__T7-bzowp7k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Greatest_Crypto_Trader_to_Ever_Live_BAPF8Ng_bvs.txt",
+        "category": "discretionary_or_commentary",
+        "reason": "The source is commentary, a live recap, or discretionary market discussion without a complete computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Heikin_Ashi_Trading_Strategy_Simple_Effective_2G78zkuQSc0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Housing_Market_Bubble_Just_Popped__7c82-V5cnU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Most_Powerful_Strategy_I_ve_Found_Yet_c8QjxXAGxtw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ONLY_Candlestick_Pattern_Guide_You_ll_EVER_NEED_tW13N4Hll88.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ONLY_Orderflow_Guide_You_ll_EVER_NEED_ljk9BovCSqI.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ONLY_Supply_Demand_Guide_You_ll_EVER_NEED_1z382y4v39Y.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Fibonnaci_Guide_You_ll_Ever_Need_vMQ0cYlDkA8.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Indicator_You_ll_Ever_Need_HFKRgIRzeQ8.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Liquidity_Guide_You_ll_EVER_NEED_9REzGB3R6HU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Only_Trading_Strategy_You_ll_Ever_Need_e-QmGJU1XYc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Secret_To_Using_The_Volume_Profile_3X95la3CCS0.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Strategy_That_Made_Him_1_1_Million_In_12_Months_9JEmsSItdt4.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Trading_Strategy_That_Made_Him_153_Million_jU2YQC7TC0k.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Trading_Strategy_That_Made_Him_1_4_Million_T2tcUgQeoPI.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_Trading_Strategy_That_Made_Him_82_Million_gtTt_7E89TA.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ULTIMATE_Fibonacci_Retracement_Tool_Guide_Best_Tips_Tricks_iL76k2A9ono.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_The_ULTIMATE_Supply_Demand_Guide_My_Secrets_fPSQ_NnmqWI.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_Gap_is_About_to_Break_The_Stock_Market_ICqUb68YGcU.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_Indicator_Predicts_The_Future_BDaQhZ8wPbk.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_One_Candle_Can_Change_Your_Life_fGZId6WmCns.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_This_Trading_Mistake_DESTROYS_Trading_Accounts_bwgPf5A-Hh0.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Top_5_FREE_Trading_Tools_for_Beginner_Traders_2024_e7vzK-fEQks.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Triangle_Trading_Pattern_Tips_My_Secret_Strategy_WAAy0YVxUEw.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Turn_100_Into_10_000_With_This_Trading_Strategy_B4ch-Lf8wJc.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Volume_Doesn_t_Work_Unless_You_Do_This_aVt0WUJuV6E.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_Warren_Buffet_How_To_Invest_in_2022_fIAEwjoCyDg.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_What_Do_Hedge_Funds_Think_of_Technical_Analysis_f19bfHpCths.txt",
+        "category": "missing_computable_entry",
+        "reason": "The source does not state a complete, direction-specific entry condition computable from Frame OHLCVA at bar close."
+      },
+      {
+        "source_ref": "/g/data/TradingLabOfficial/large_v3_turbo_You_re_Using_The_RSI_WRONG_NT_qg2qPR1c.txt",
+        "category": "incomplete_indicator_rule",
+        "reason": "The source describes an indicator or visual method but does not specify a complete Frame-computable entry rule."
+      }
+    ]
+  }
+}
