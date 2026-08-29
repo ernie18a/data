@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "files": [
+    {"path": "large_v3_turbo_Achieving_FTMO_funded_account_My_Algorithmic_Trading_Journey_gkrmKnTX5Bo.txt", "sha256": "fa82ca7b7632d6102a8ef344df3f67eef9f491d11eb89a48484c75c8362196e8", "status": "skipped", "output_refs": [], "reason": "Performance narrative; algorithm entry rules are not disclosed."},
+    {"path": "large_v3_turbo_Breaking_Down_My_2_262_Payouts_Insights_and_Strategies_MO-lWyR76u8.txt", "sha256": "748bc240f86cd81ac0cc4a574c251178062f8ca3f2e111c53e7023ea68bb0515", "status": "processed", "output_refs": ["risk_only:dynamic_account_risk"]},
+    {"path": "large_v3_turbo_Building_a_Quantitative_Edge_From_Idea_to_Algorithm_Strategy_Kvd7gvTHmbk.txt", "sha256": "c1d7eb7ed69c93037d1ccefe00609ed351110a5085d388049e1256bb9cedf3a1", "status": "processed", "output_refs": ["rational_edge_price_vs_sma", "risk_only:atr_trade_management"]},
+    {"path": "large_v3_turbo_Darwinex_Zero_70k_Allocation_Portfolio_Review_and_Analysis_3Hqaj23GFwo.txt", "sha256": "f3c22a59221f6696611d99c3a913fc44bcdc661b5c2247b238a0416f8fb654cd", "status": "skipped", "output_refs": [], "reason": "Portfolio review without a calculable entry trigger."},
+    {"path": "large_v3_turbo_Defying_the_Odds_of_Success_Quantitative_Portfolio_Analysis_and_Portfolio_Management_Cd5z8STe07Q.txt", "sha256": "0e225af940228fb3e6cb6c72af4f83b2ea6f67e42745692980cd9672f87cbda2", "status": "processed", "output_refs": ["risk_only:mfe_fixed_exit"]},
+    {"path": "large_v3_turbo_Financial_Machine_Learning_Explained_Market_Prediction_AI_in_Trading_d5ipXlEWZg8.txt", "sha256": "7eb15595856bf048e90d7fe07ab2abf94aa4f3e3cba05f843ebc16518576d014", "status": "skipped", "output_refs": [], "reason": "Model, features, ranking threshold, universe, and holding rules are absent."},
+    {"path": "large_v3_turbo_From_Theory_to_Reality_Applying_Ray_Dalio_s_Holy_Grail_to_My_Portfolio_CX7KtNcNiHA.txt", "sha256": "1f7d33fbf40672b3d1a5c30d338a3d92b45caca57865dbc21a54e926f0c4987e", "status": "processed", "output_refs": ["risk_only:portfolio_equity_limits", "risk_only:friday_close", "risk_only:pyramiding_gates"]},
+    {"path": "large_v3_turbo_Gold_Status_Achieved_New_Milestone_in_My_Investment_Journey_Fq3AShqKPgM.txt", "sha256": "036ddc9e576a37270102cddb020bbc2560114923b6e7235b11bbda83ba89c0a7", "status": "skipped", "output_refs": [], "reason": "Pyramiding and performance are described without an entry or add-on trigger."},
+    {"path": "large_v3_turbo_Inside_My_AI_Quant_Workflow_Python_MT5_Genetic_Optimization_G57FAI-dkXs.txt", "sha256": "85175aa1c6cd08f6fcb83a760d4cf30c13e92dafec30da2ce9f558837d7ef236", "status": "skipped", "output_refs": [], "reason": "Workflow and hypothetical examples do not disclose a strategy trigger."},
+    {"path": "large_v3_turbo_Leveraging_Python_for_Superior_Trading_Analytics_and_Strategy_Optimization_LpjoIk5A6kU.txt", "sha256": "8a034ddd10f6c7e0a69062dd9d00c7ecc56fe0352fff9072af00b1161ee58456", "status": "processed", "output_refs": ["risk_only:daily_close", "risk_only:mae_mfe_analysis"]},
+    {"path": "large_v3_turbo_My_First_FTMO_Payout_629_now_risk_free_KH23WsKIEBw.txt", "sha256": "5a27190453f493efeeee55670c3b3aef8a401852f08640d4acc89bb2a08e0846", "status": "skipped", "output_refs": [], "reason": "A historical DAX trade and payout pause provide no reusable entry rule."},
+    {"path": "large_v3_turbo_NEW_PAYOUTS_1180_Analisys_eIZFbe_lsg4.txt", "sha256": "eeca7e3081e2ac256d0418211981315690c55c46ca51d5cbef12ed70152662e1", "status": "processed", "output_refs": ["risk_only:payout_target"]},
+    {"path": "large_v3_turbo_Professional_Trading_600K_Capital_Strategies_Diversification_rnVediAz5dg.txt", "sha256": "14009c9f180f2f08af92a7b236948e69a706e647c585a48f084610d3bd661765", "status": "skipped", "output_refs": [], "reason": "Strategy families are named without thresholds, windows, or direction conditions."},
+    {"path": "large_v3_turbo_Range_Breakout_Strategy_Enhancing_Results_with_Quant_Analyzer_Npz3zHhv7mw.txt", "sha256": "8efea287883034da65133dbcf181962f0c4cc39044a4e0dbb268a6424514047e", "status": "processed", "output_refs": ["rational_edge_confirmed_range_breakout"]},
+    {"path": "large_v3_turbo_Second_FTMO_Payout_536_November_Performance_Review_1byRHsXyZT0.txt", "sha256": "623af2bd5e6a815af952b8aae4aee0b1e93893da0677fbbfdfef03d300e77981", "status": "skipped", "output_refs": [], "reason": "Account performance and manual closure contain no calculable entry."},
+    {"path": "large_v3_turbo_The_Risk_Engine_Tool_Managing_Trading_Risks_Effectively_W32JwWW1skw.txt", "sha256": "14ed3eb8c0d49d39c7a55536d30a5302d8e5cf5bf9bad4e519aa3382326fe903", "status": "processed", "output_refs": ["risk_only:equity_target", "risk_only:loss_limit", "risk_only:asset_lot_cap"]},
+    {"path": "large_v3_turbo_Using_AI_as_a_Force_Multiplier_in_Quant_Trading_2OAZMUVZA2Q.txt", "sha256": "d817474e54fe2eb20759b0b85cdc79afeb900c134843b4c907de0670acb31e84", "status": "skipped", "output_refs": [], "reason": "Research examples name indicators and styles without formulas or parameters."}
+  ],
+  "file_status_counts": {"discovered": 17, "processed": 8, "ignored": 0, "duplicate": 0, "skipped": 9, "failed": 0},
+  "candidate_decisions": {
+    "risk_only": [
+      {"source_ref": "large_v3_turbo_Breaking_Down_My_2_262_Payouts_Insights_and_Strategies_MO-lWyR76u8.txt:52-64", "category": "dynamic_account_risk", "reason": "Changes risk from account profit and has no entry condition; required account equity is unavailable."},
+      {"source_ref": "large_v3_turbo_Building_a_Quantitative_Edge_From_Idea_to_Algorithm_Strategy_Kvd7gvTHmbk.txt:31-35,62-68", "category": "atr_trade_management", "reason": "ATR stop, target multiple, trailing stop, Friday close, and pending-order expiry are risk or exit rules."},
+      {"source_ref": "large_v3_turbo_Defying_the_Odds_of_Success_Quantitative_Portfolio_Analysis_and_Portfolio_Management_Cd5z8STe07Q.txt:139-144", "category": "mfe_fixed_exit", "reason": "A fixed MFE exit hypothesis has no associated entry."},
+      {"source_ref": "large_v3_turbo_From_Theory_to_Reality_Applying_Ray_Dalio_s_Holy_Grail_to_My_Portfolio_CX7KtNcNiHA.txt:75-79,108-127,153-162", "category": "portfolio_risk_controls", "reason": "Portfolio equity limits, Friday closure, and pyramiding gates require portfolio state or timestamps and are not entries."},
+      {"source_ref": "large_v3_turbo_Leveraging_Python_for_Superior_Trading_Analytics_and_Strategy_Optimization_LpjoIk5A6kU.txt:53-80,119-124", "category": "post_trade_and_daily_exit", "reason": "MAE/MFE analysis and daily closure do not define an entry."},
+      {"source_ref": "large_v3_turbo_NEW_PAYOUTS_1180_Analisys_eIZFbe_lsg4.txt:10-15", "category": "payout_target", "reason": "Portfolio PnL bulk closure requires portfolio equity and has no entry."},
+      {"source_ref": "large_v3_turbo_The_Risk_Engine_Tool_Managing_Trading_Risks_Effectively_W32JwWW1skw.txt:8-88", "category": "account_risk_engine", "reason": "Equity target, loss limit, and lot caps are account-level controls unavailable to signal functions."}
+    ],
+    "skipped": [
+      {"source_ref": "large_v3_turbo_Achieving_FTMO_funded_account_My_Algorithmic_Trading_Journey_gkrmKnTX5Bo.txt", "category": "undisclosed_strategy", "reason": "No entry formula is disclosed."},
+      {"source_ref": "large_v3_turbo_Building_a_Quantitative_Edge_From_Idea_to_Algorithm_Strategy_Kvd7gvTHmbk.txt:5-14", "category": "undefined_volume_signal", "reason": "Bearish volume, window, threshold, and trigger timing are undefined."},
+      {"source_ref": "large_v3_turbo_Financial_Machine_Learning_Explained_Market_Prediction_AI_in_Trading_d5ipXlEWZg8.txt:145-148", "category": "missing_model", "reason": "The ranking model, features, universe, threshold, and holding period are missing."},
+      {"source_ref": "large_v3_turbo_Inside_My_AI_Quant_Workflow_Python_MT5_Genetic_Optimization_G57FAI-dkXs.txt:82-86", "category": "hypothetical_example", "reason": "The hourly example illustrates translation and is not a disclosed trading strategy."},
+      {"source_ref": "large_v3_turbo_Professional_Trading_600K_Capital_Strategies_Diversification_rnVediAz5dg.txt:100-111", "category": "unnamed_rules", "reason": "Breakout, trend-following, and mean-reversion styles have no calculable triggers."},
+      {"source_ref": "large_v3_turbo_Using_AI_as_a_Force_Multiplier_in_Quant_Trading_2OAZMUVZA2Q.txt:95-101", "category": "research_examples", "reason": "RSI and strategy families are examples without thresholds, windows, or direction rules."}
+    ]
+  }
+}
